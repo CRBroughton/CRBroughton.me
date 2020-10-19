@@ -8,19 +8,87 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/cards.css">
+    <link rel="stylesheet" href="assets/css/devices.min.css">
     <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/magnific-popup.css">
+    <link rel="stylesheet" href="assets/css/animation.css">
 </head>
 
 <body>
+    <div id="navbar" class="navbar">
+        <ul>
+            <li class="portfolio-lnk"><a href="#">CRBROUGHTON.ME</a></li>
+            <li><a href="#portfolio">PORTFOLIO</a></li>
+            <!-- <li><a href="#">Projects</a></li> -->
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </div>
     <div class="jumbotron">
-        <div class="jumbotron-container">
-            <img class="profile-img" src="assets/img/logo.png">
-            <p class="jumbotron-p">Freelance Web Designer &amp; Developer Based in Brighton.</p>
-            <p class="jumbotron-p">Coming Soon...</p>
+        <img class="profile-img" src="/assets/img/logo.png">
+        <!-- <h2 class="jumbotron-title">WEB DEVELOPER</h2> -->
+        <p class="jumbotron-p">Freelance Web Designer &amp; Developer Based in Brighton.</p>
+        <div class="scroll-arrow">
+            <span></span>
+            <span></span>
+            <span></span>
         </div>
     </div>
-
+    <div class="portfolio" id="portfolio">
+        <div class="portfolio-header">
+            <h2>Portfolio</h2>
+        </div>
+        <div class="device-wrapper portfolioimg1">
+            <div class="device" data-device="MacbookPro" data-orientation="portrait" data-color="black">
+                <div class="screen">
+                    <img src="/assets/img/adhd.png" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="computer-txt portfoliotxt1">
+            <h3>ADHD Charity</h3>
+            <p>A local ADHD charity website reimagined with Bootstrap.</p>
+            <a class="btn popup-with-move-anim" href="https://amazing-hawking-476725.netlify.app/">Preview Site</a>
+            <a class="btn btn-solid" href="https://amazing-hawking-476725.netlify.app/">Visit Site</a>
+        </div>
+        <hr class="break">
+        </hr>
+        <div class="device-wrapper portfolioimg2">
+            <div class="device" data-device="MacbookPro" data-orientation="portrait" data-color="black">
+                <div class="screen">
+                    <img src="/assets/img/timcast.png" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="computer-txt portfoliotxt2">
+            <h3>Timcast</h3>
+            <p>Award Winning American Journalist and Political Commentator.</p>
+            <a class="btn popup-with-move-anim" href="https://distracted-ardinghelli-0bb9e2.netlify.app/">Preview Site</a>
+            <a class="btn btn-solid" href="https://distracted-ardinghelli-0bb9e2.netlify.app/">Visit Site</a>
+        </div>
+        <!-- <hr class="break2">
+        </hr>
+        <div class="device-wrapper portfolioimg3">
+            <div class="device" data-device="MacbookPro" data-orientation="portrait" data-color="black">
+                <div class="screen">
+                    <img src="/assets/img/Screenshot_20200921_193102.png" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="computer-txt portfoliotxt3">
+            <h3>ADHD Charity</h3>
+            <p>A local ADHD charity website reimagined with Bootstrap.</p>
+            <a class="btn popup-with-move-anim" href="#">Preview Site</a>
+            <a class="btn btn-solid" href="#">Visit Site</a>
+        </div> -->
+    </div>
+    <div class="contact" id="contact">
+        <h2>Want to get in contact? <a href="mailto:crbroughton@posteo.uk">Email me here.</a></h2>
+    </div>
+    <!-- jQuery 1.7.2+ or Zepto.js 1.0+ -->
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"
+        integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script src="/assets/js/popup.js"></script>
+    <script src="/assets/js/script.js"></script>
 </body>
 
 </html>

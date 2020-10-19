@@ -2,9 +2,22 @@
   --clr-gray-light: #d7dfe2;
   --clr-gray-med: #616b74;
   --clr-gray-dark: #414b56;
+  --clr-link: #ffc558;
 }
 
+/*Include padding and border in the element's total width and height*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box
+}
+
+/* * {
+  outline: 1px solid rgba(26, 255, 56, 0.5);
+} */
+
 /*-GLOBAL-VARIABLES-*/
+
 * {
   margin: 0;
   padding: 0;
@@ -20,12 +33,62 @@ html {
 
 html,
 body {
-  background-color: var(--clr-gray-light);
-  color: var(--clr-gray-dark);
+  background-color: white;
+  color: #555;
   font-weight: 300;
   font-size: 18px;
   text-rendering: optimizeLegibility;
   overflow-x: hidden;
+}
+
+/*-NAVBAR-*/
+
+#navbar {
+  width: 100vw;
+  background: #1a1a1b;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  position: fixed;
+  width: 100vw;
+  z-index: 9999;
+}
+
+#navbar ul {
+  list-style: none;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 1em 0;
+  margin: 0;
+}
+
+#navbar ul li a {
+  text-decoration: none;
+  color: white;
+  padding-right: 3em;
+  position: relative;
+}
+
+#navbar ul li a::after {
+  content: '';
+  position: absolute;
+  display: block;
+  height: 0.4em;
+  width: 0%;
+  background: var(--pink);
+  bottom: -1em;
+  transition: all ease-in-out 250ms;
+}
+
+#navbar ul li a:hover {
+  color: var(--clr-link);
+  transition: all ease-in-out 250ms;
+}
+
+#navbar ul li:first-child {
+  margin-right: auto;
+  margin-left: 3em;
 }
 
 /*-JUMBOTRON/HERO-*/
@@ -36,15 +99,11 @@ body {
   background-position-y: center;
   background-attachment: fixed;
   text-align: center;
+  /* background: var(--clr-gray-light); */
+  border-radius: 0;
+  padding: 8em 0 8em 0;
   height: 100vh;
-}
-
-.jumbotron-container {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-
+  /* margin-top: -50px; */
 }
 
 .jumbotron-title,
@@ -56,18 +115,283 @@ body {
   padding: 1rem;
 }
 
+.scroll-arrow {
+  display: inline-block;
+  margin-top: 5em;
+  position: relative;
+}
+
+.scroll-arrow span {
+  display: block;
+  width: 30px;
+  height: 30px;
+  border-bottom: 2px solid #fff;
+  border-right: 2px solid #fff;
+  transform: rotate(45deg);
+  margin: -5px;
+  animation: animate 2s infinite;
+}
+
+/*-PORTFOLIO-*/
+
+.portfolio {
+  display: grid;
+  max-width: 1140px;
+  margin: 0 auto;
+  background: white;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas:
+    'header header'
+    'portfolioimg1 portfoliotxt1'
+    'break break'
+    'portfolioimg2 portfoliotxt2'
+    'break2 break2'
+    'portfolioimg3 portfoliotxt3';
+}
+
+.portfolio h2 {
+  text-align: center;
+  margin: 4em 0 1em 0;
+  grid-area: header;
+  font-size: 1.1rem;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.device {
+  z-index: 1;
+}
+
+/* .device-wrapper, .computer-txt {
+  margin: 5em 0 5em 0;
+  padding: 1em;
+} */
+
+.portfolio-header {
+  grid-area: header;
+}
+
+.device-wrapper {
+  margin: 2em 0 2em 0;
+  padding: 1em;
+}
+
+.computer-txt {
+  margin: 1em 0 2em 0;
+  padding: 1em;
+  text-align: center;
+  align-self: center;
+}
+
+.computer-txt p {
+  margin: 1em 0 1em 0;
+}
+
+.device-wrapper .portfolioimg1 {
+  grid-area: portfolioimg1;
+  position: relative;
+}
+
+.computer-txt .portfoliotxt1 {
+  grid-area: portfoliotxt1;
+}
+
+.portfolioimg2 {
+  grid-area: portfolioimg2;
+}
+
+.portfoliotxt2 {
+  grid-area: portfoliotxt2;
+}
+
+.portfolioimg3 {
+  grid-area: portfolioimg3;
+}
+
+.portfoliotxt3 {
+  grid-area: portfoliotxt3;
+}
+
+.break {
+  grid-area: break;
+}
+
+.break2 {
+  grid-area: break2;
+}
+
+.screen img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: auto;
+  min-height: 100%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+
+hr {
+  border-color: #d6d6d652;
+  margin: 1em;
+}
+
+h3 {
+  font-size: 28px;
+  font-weight: 700;
+  color: #212529;
+}
+
+.btn {
+  display: inline-block;
+  border: 1px solid #00386b;
+  color: #00386b;
+  padding: 0.5em 1.2em;
+  border-radius: 30px;
+  margin-top: 1em;
+  font-size: 0.8em;
+}
+
+.btn-solid {
+  color: white;
+  background: #00386b;
+}
+
+.h1,
+h1 {
+  color: white;
+}
+
 .profile-img {
   width: 256px;
   height: 256px;
+  margin-top: 100px;
+
 }
 
-/*Small phones: from 0 to 480px*/
+.h1,
+h1 {
+  margin-top: 30px;
+  font-weight: 700;
+}
+
+p {
+  font-weight: 300;
+  font-size: 0.9rem;
+}
+
+.wrapper-container {
+  background: #eee;
+}
+
+.portfolio-clm {
+  background-color: rgb(41, 52, 58);
+}
+
+.contact {
+  background: #1a1a1b;
+  text-align: center;
+  color: white;
+  padding: 1em;
+  font-size: 0.6em;
+}
+
+.contact a {
+  color: var(--clr-link);
+}
+
+.contact a:hover {
+  color: #ffe4b3;
+}
+
+@media only screen and (max-height: 687px) {
+  .profile-img {
+    margin-top: unset;
+  }
+  .scroll-arrow {
+    margin-top: 1em;
+  }
+}
+
+@media only screen and (max-height: 648px) {
+  .jumbotron {
+    height: unset;
+  }
+
+  .profile-img {
+    margin-top: 0px;
+  }
+}
+
 @media only screen and (max-width: 560px) {
+  .jumbotron {
+    padding: 4em 0 4em 0;
+  }
+
+  .profile-img {
+    margin-top: 50px;
+  }
 
   .portfolio-lnk {
     display: none;
   }
 
+  .popup {
+    display: none;
+  }
+
+  #navbar ul {
+    justify-content: center;
+    margin: 0 0 0 40px;
+  }
+
+  .scroll-arrow {
+    margin-top: unset;
+  }
+
+  .card {
+    margin: 0.5rem 0.2rem 0.5rem 0.2rem;
+  }
+
+  .device-wrapper {
+    margin: 2em 0 1em 0;
+    padding: 1em 3em 1em 3em;
+  }
+
+  .popup-with-move-anim {
+    display: none;
+  }
+
+  .computer-txt {
+    margin: 1em 0 1em 0;
+  }
+
+  /*Small phones: from 0 to 480px*/
+@media only screen and (max-width: 480px) {
+  .device-wrapper {
+    padding: 1em;
+  }
+}
+
+  .portfolio {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      'header'
+      'portfolioimg1'
+      'portfoliotxt1'
+      'break'
+      'portfolioimg2'
+      'portfoliotxt2'
+      'break2'
+      'portfolioimg3'
+      'portfoliotxt3';
+  }
+
+  .contact {
+    font-size: 0.5em;
+  }
 }
 
 @keyframes animate {
