@@ -1,0 +1,16 @@
+{
+  "name": "@example/starter",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "astro dev",
+    "build": "astro build",
+    "tailwind-config-viewer": "tailwind-config-viewer -o"
+  },
+  "devDependencies": {
+    "@astrojs/renderer-vue": "^0.1.3",
+    "astro": "^0.17.2",
+    "tailwind-config-viewer": "^1.6.2",
+    "tailwindcss": "^2.2.4"
+  }
+}
