@@ -1,5 +1,5 @@
 <template>
-  <div class="flex h-screen md:flex-wrap md:content-center md:justify-center md:-mt-24">
+  <div class="flex h-screen md:flex-wrap md:content-center md:justify-center md:-mt-24 -mt-8">
     <div class="m-auto md:m-0 md:flex md:flex-wrap">
       <img
         src="../../public/assets/logo.png"
