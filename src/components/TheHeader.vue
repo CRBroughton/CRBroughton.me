@@ -14,7 +14,7 @@
           <a href="#skills">SKILLS</a>
       </li>
       <li class="md:pr-12">
-          <a href="#footer">CONTACT</a>
+          <a href="#contact">CONTACT</a>
       </li>
     </ul>
   </div>
