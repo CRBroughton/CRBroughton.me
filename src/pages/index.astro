@@ -5,6 +5,9 @@ import Tour from '../components/Tour.astro';
 import VueCounter from '../components/VueCounter.vue';
 import TheHeader from '../components/TheHeader.vue';
 import JumboBase from '../components/JumboBase';
+import AboutMe from '../components/AboutMe.vue';
+import Projects from '../components/Projects.vue';
+import Skills from '../components/Skills.vue'
 import TheFooter from '../components/TheFooter.vue';
 
 // Component Script:
@@ -29,7 +32,10 @@ let title = 'CRBroughton.me';
     <main class="">
         <TheHeader />
         <JumboBase />
-        <TheFooter />
+        <AboutMe id="aboutme"/>
+        <Projects id="projects"/>
+        <Skills id="skills"/>
+        <TheFooter id="contact"/>
     </main>
 </body>
 </html>
