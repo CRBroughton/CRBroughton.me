@@ -1,13 +1,13 @@
 <template>
-  <div class="flex h-screen md:flex-wrap md:content-center md:justify-center bg-cover bg-center bg-fixed" style="background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.7)), to(rgba(0, 0, 0, 0.7))), url(https://images.unsplash.com/photo-1461749280684-dccba630e2f6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80);">
+  <div class="flex h-screen md:flex-wrap md:content-center md:justify-center md:-mt-24">
     <div class="m-auto md:m-0 md:flex md:flex-wrap">
       <img
-        src="assets/logo.png"
+        src="../../public/assets/logo.png"
         alt="test"
-        class="rounded-full m-auto md:m-0 h-48 w-48"
+        class="rounded-lg m-auto md:m-0 h-48 w-48 bg-gray-800"
       />
-      <div class="flex flex-wrap content-center">
-        <h1 class="text-white mt-4 text-xs font-semibold sm:text-base md:mt-0">Freelance Web Designer & Developer Based in Brighton</h1>
+      <div class="flex flex-wrap max-w-md text-center content-center md:text-left">
+        <h1 class="text-gray-800 mt-4 px-4 text-3xl font-inter font-semibold md:mt-0 md:ml-4 md:text-4xl">Freelance Web Designer & Developer Based in Brighton</h1>
       </div>
     </div>
   </div>
