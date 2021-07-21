@@ -1,7 +1,7 @@
 <template>
   <div class="w-full bg-white py-8 text-sm md:py-12 md:px-8 border-2 border-gray-100">
     <ul class="justify-center gap-12 md:gap-0 text-gray-800 hidden md:flex md:visible">
-      <li class="mr-auto ml-12md:inline">
+      <li class="mr-auto pl-12 ml-12md:inline">
         <a href>CRBROUGHTON.ME</a>
       </li>
       <li class="md:pr-12">
@@ -24,19 +24,19 @@
       </div>
     </div>
   </div>
-  <div v-if="sidebar" class="flex justify-end w-full bg-gray-50 md:hidden">
+  <div v-if="sidebar" class="flex absolute justify-end w-full bg-gray-50 md:hidden">
     <div class="mr-14 my-4">
       <ul>
-        <li class="mb-1">
+        <li class="mb-1" @click="toggleSidebar">
             <a href="#aboutme">ABOUT ME</a>
         </li>
-        <li class="mb-1">
+        <li class="mb-1" @click="toggleSidebar">
             <a href="#projects">PROJECTS</a>
         </li>
-        <li class="mb-1">
+        <li class="mb-1" @click="toggleSidebar">
             <a href="#skills">SKILLS</a>
         </li>
-        <li class="mb-1">
+        <li class="mb-1" @click="toggleSidebar">
             <a href="#contact">CONTACT</a>
         </li>
       </ul>
