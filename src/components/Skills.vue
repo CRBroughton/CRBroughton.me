@@ -33,7 +33,7 @@ export default {
         { name: "Gridsome", width: "w-2/12" },
         { name: "SASS", width: "w-2/12" },
         { name: "Cypress", width: "w-2/12" },
-        { name: "vue-test-utils", width: "w-2/12" },
+        { name: "Vue Test Utils", width: "w-2/12" },
 
       ],
     };
