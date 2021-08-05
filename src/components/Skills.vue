@@ -31,6 +31,9 @@ export default {
         { name: "Express", width: "w-5/12" },
         { name: "GraphQL", width: "w-2/12" },
         { name: "Gridsome", width: "w-2/12" },
+        { name: "SASS", width: "w-2/12" },
+        { name: "Cypress", width: "w-2/12" },
+        { name: "vue-test-utils", width: "w-2/12" },
 
       ],
     };
