@@ -15,7 +15,12 @@ module.exports = {
       '3/4': '75%',
       'full': '100%',
      },
-    extend: {},
+    extend: {
+      colors: {
+        'tillo-blue': '#5853E5',
+        'tillo-green': '#39D884'
+      },
+    },
   },
   variants: {
     extend: {},
