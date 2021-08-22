@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full bg-white py-8 text-sm md:py-12 md:px-8 border-2 border-gray-100">
+  <div class="w-full bg-white py-8 text-sm md:py-12 md:px-8 border-b-2 border-gray-100">
     <ul class="justify-center gap-12 md:gap-0 text-gray-800 hidden md:flex md:visible">
       <li class="mr-auto pl-12 ml-12md:inline">
         <a href>CRBROUGHTON.ME</a>
