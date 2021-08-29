@@ -27,6 +27,8 @@ html {
 
 html::-webkit-scrollbar {
   width: 0.5vw;
+  min-width: 10px;
+  max-width: 10px;
 }
 
 html::-webkit-scrollbar-thumb {
