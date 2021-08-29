@@ -33,14 +33,14 @@ html::-webkit-scrollbar {
 
 html::-webkit-scrollbar-thumb {
   background-color: hsl(0, 0%, 90%);
-  box-shadow: inset 0 0 10px 10px hsl(0, 0%, 70%);
-  border: solid 3px transparent;
+  box-shadow: inset 0 0 10px 10px hsl(242, 74%, 61%);
+  border: solid 2px transparent;
   border-radius: 30px;
 }
 
 html::-webkit-scrollbar-track {
   background-color: hsl(0, 0%, 90%);
-  border: solid 3px transparent;
+  border: solid 2px transparent;
 }
 
 html,
