@@ -4,16 +4,19 @@
       <li class="mr-auto pl-12 ml-12md:inline">
         <a href>CRBROUGHTON.ME</a>
       </li>
-      <li class="md:pr-12">
+      <li class="md:pr-8">
           <a href="#aboutme">ABOUT ME</a>
       </li>
-      <li class="md:pr-12">
+      <li class="md:pr-8">
+          <a href="https://blog.crbroughton.me">BLOG</a>
+      </li>
+      <li class="md:pr-8">
           <a href="#projects">PROJECTS</a>
       </li>
-      <li class="md:pr-12">
+      <li class="md:pr-8">
           <a href="#skills">SKILLS</a>
       </li>
-      <li class="md:pr-12">
+      <li class="md:pr-8">
           <a href="#contact">CONTACT</a>
       </li>
     </ul>
@@ -24,11 +27,14 @@
       </div>
     </div>
   </div>
-  <div v-if="sidebar" class="flex absolute justify-end w-full bg-gray-50 md:hidden">
+  <div v-if="sidebar" class="flex relative justify-end w-full bg-gray-50 md:hidden">
     <div class="mr-14 my-4">
       <ul>
         <li class="mb-1" @click="toggleSidebar">
             <a href="#aboutme">ABOUT ME</a>
+        </li>
+        <li class="mb-1">
+            <a href="https://blog.crbroughton.me">BLOG</a>
         </li>
         <li class="mb-1" @click="toggleSidebar">
             <a href="#projects">PROJECTS</a>
