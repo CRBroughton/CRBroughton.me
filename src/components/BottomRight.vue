@@ -3,7 +3,7 @@
 </script>
 
 <template>
-    <div class="border border-t-0 border-b-0 border-r-0 border-l-0 flex flex-col gap-4 p-10">
+    <div class="overflow-scroll border border-t-0 border-b-0 border-r-0 border-l-0 flex flex-col gap-4 p-10">
         <h1 class="scroll-m-20 font-extrabold tracking-tight text-3xl text-white">Wanna chat?</h1>
         <h2 class="scroll-m-20 font-normal tracking-tight text-xl text-white">You can find me using any of the following:
         </h2>
