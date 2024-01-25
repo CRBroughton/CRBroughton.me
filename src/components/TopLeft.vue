@@ -3,7 +3,7 @@
 </script>
 
 <template>
-    <div class="overflow-scroll relative flex flex-col gap-4 border border-t-0 border-r-0 border-l-0 xl:border xl:border-t-0 xl:border-l-0 xl:border-r-1 xl:border-b-10 p-10 w-full h-full">
+    <div class="customContainer overflow-scroll relative flex flex-col gap-4 border border-t-0 border-r-0 border-l-0 xl:border xl:border-t-0 xl:border-l-0 xl:border-r-1 xl:border-b-10 p-10 w-full h-full">
         <h1 class="scroll-m-20 font-extrabold tracking-tight text-3xl text-white">Hi there, I'm Craig,</h1>
         <h2 class="scroll-m-20 font-normal tracking-tight text-xl text-white">I'm a Software Engineer,
             focused on delivering
@@ -21,4 +21,14 @@
     </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+.customContainer {
+    overflow-y: scroll;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+}
+.customContainer::-webkit-scrollbar { /* WebKit */
+    width: 0;
+    height: 0;
+}
+</style>
