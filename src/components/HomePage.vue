@@ -9,7 +9,7 @@ import BottomRight from './BottomRight.vue'
 <template>
     <div class="grid justify-center items-center bg-slate-800 w-screen h-screen">
         <div class="w-screen">
-            <div class="grid grid-cols-2 grid-rows-2 w-full h-screen bg-gray-900">
+            <div class="grid grid-cols-1 grid-rows-1 lg:w-full xl:h-screen xl:grid-cols-2 lg:grid-rows-2 bg-gray-900">
                 <TopLeft />
                 <TopRight />
                 <BottomLeft />
