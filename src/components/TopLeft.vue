@@ -21,7 +21,7 @@
                     class="underline underline-offset-4 transition duration-500 ease-in-out text-[rgb(139,135,239)] hover:text-[rgba(57,216,132)] hover:cursor-pointer font-semibold">Tillo</span></a>,
             where I lead the front end development of our platforms. I run regular company workshops, focused on enhancing
             knowledge of front end development.</h2>
-        <h2 class="scroll-m-20 font-normal tracking-tight text ">My goal is to drive forward our platform to surpise and
+        <h2 class="scroll-m-20 font-normal tracking-tight text ">My goal is to drive forward our platform to surprise and
             delight all of our users, giving them the experience they deserve.</h2>
 
         <div class="mt-auto flex flex-col gap-2 lg:flex-row">
