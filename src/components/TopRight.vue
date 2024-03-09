@@ -16,6 +16,8 @@
         <h2 class="scroll-m-20 font-normal tracking-tight text "><a class="underline underline-offset-4"
                 href="https://www.aiemotes.uk">AIEmotes</a> - Innovative AI-powered emote generation. Create stunning emotes
             for various website with just a single click. AIEmotes was created with the V3 stack.</h2>
+        <h2 class="scroll-m-20 font-normal tracking-tight text "><a class="underline underline-offset-4"
+            href="https://github.com/CRBroughton/Sibyl">Sibyl</a> - A lightweight, typesafe query builder for sql.js</h2>
         <h2 class="scroll-m-20 font-normal tracking-tight text ">Regress (coming soon) - Regress is a web based application,
             which provides a visualisation layer to your image assets repository, as well as an easy to use interface for
             simple regression testing.</h2>
