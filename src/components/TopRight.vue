@@ -26,6 +26,8 @@
             practices. The aim of V3 is to enable developers to move fast without breaking anything, which is the manta of
             TRPC, which powers the core of V3's API. V3 was inspired by T3, a similar stack which instead uses React as the
             front-end framework.</h2>
+        <h2 class="scroll-m-20 font-normal tracking-tight text "><a class="underline underline-offset-4"
+                href="https://github.com/CRBroughton/ts-test-utils">TS Test Utils</a> - A collection of helper TypeScript types to test other TypeScript types.</h2>
     </div>
 </template>
 
