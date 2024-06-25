@@ -27,9 +27,13 @@
         <div class="mt-auto flex flex-col gap-2 lg:flex-row">
             <p class="scroll-m-20 font-normal tracking-tight text-base "><span
                     class="underline underline-offset-4 font-bold">Skills:</span> TypeScript, Vue, Tailwind, Go</p>
-            <p class="scroll-m-20 font-normal tracking-tight text-base  lg:ml-auto"><a
+            <p class="scroll-m-20 font-normal tracking-tight text-base lg:ml-auto"><a
+                    href="/talks" class="underline underline-offset-4">Talks & Slides</a>
+            </p>
+            <p class="scroll-m-20 font-normal tracking-tight text-base "><a
                     href="https://rxresu.me/crbroughton/cv" class="underline underline-offset-4">CV / Resume available
-                    here</a></p>
+                    here</a>
+            </p>
         </div>
     </div>
 </template>
