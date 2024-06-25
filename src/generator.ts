@@ -6,7 +6,7 @@ export function useGenerator(props: {states: anime.AnimeParams[]}) {
     const states = ref(props.states)
 
     const generator = function* generateSequence() {
-        anime(states.value[0])
+        anime(states.value[currentPosition.value])
         if (currentPosition.value > states.value.values.length + 1) {
             // emit here for resets / change slides
             // currentPosition.value = 0
