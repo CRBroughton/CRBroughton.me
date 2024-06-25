@@ -1,9 +1,9 @@
 ---
 import "@fontsource-variable/manrope";
 import MainLayout from '../layouts/main.astro';
-import Heading from "../components/Heading.vue";
+import DemoSlide from '../slides/demo-slide.vue'
 ---
 
 <MainLayout>
-	<Heading size="h1">Hello, World!</Heading>
+	<DemoSlide client:only="vue" />
 </MainLayout>
