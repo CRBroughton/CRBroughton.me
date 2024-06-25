@@ -7,9 +7,9 @@ const props = defineProps<{
 
     const classes = computed(() => {
         return {
-         "scroll-m-20 font-extrabold tracking-tight text-white text-3xl": props.size === 'h1',
-         'scroll-m-20 font-normal tracking-tight text-white text-xl': props.size === 'h2',
-         'scroll-m-20 font-normal tracking-tight text-white text': props.size === 'h2'
+         "scroll-m-20 font-extrabold tracking-tight text-3xl": props.size === 'h1',
+         'scroll-m-20 font-normal tracking-tight text-xl': props.size === 'h2',
+         'scroll-m-20 font-normal tracking-tight text': props.size === 'h2'
 
         }
     })
