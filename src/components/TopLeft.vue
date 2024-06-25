@@ -26,8 +26,8 @@ import Paragraph from './Paragraph.vue';
     <div class="mt-auto flex flex-col gap-2 lg:flex-row">
         <Paragraph><span
                 class="underline underline-offset-4 font-bold">Skills:</span> TypeScript, Vue, Tailwind, Go</Paragraph>
-        <Paragraph class="lg:ml-auto"><a href="/talks" class="underline underline-offset-4">Talks & Slides</a>
-        </Paragraph>
+        <!-- <Paragraph class="lg:ml-auto"><a href="/talks" class="underline underline-offset-4">Talks & Slides</a>
+        </Paragraph> -->
         <Paragraph><a href="https://rxresu.me/crbroughton/cv" class="underline underline-offset-4">CV / Resume available
                 here</a>
         </Paragraph>

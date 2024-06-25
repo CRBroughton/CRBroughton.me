@@ -7,6 +7,8 @@ let heading: HTMLElement | null
 let testButton: HTMLElement | null
 const showAnimatedSlide = ref(false)
 
+const show = ref(false)
+
 onMounted(() => {
     heading = document.getElementById('introduction-heading');
     testButton = document.getElementById('test-button');
@@ -37,7 +39,7 @@ onMounted(() => {
 </script>
 
 <template>
-    <div class="text-white flex gap-4 w-full">
+    <div v-if="show === true" class="text-white flex gap-4 w-full">
         <div class="w-full h-screen flex items-center justify-center">
             <div class="flex flex-col gap-8">
                 <Heading id="introduction-heading" size="h1" style="scale: 2.4">Atomic Components</Heading>
@@ -48,5 +50,8 @@ onMounted(() => {
         <div v-if="showAnimatedSlide" class="w-full h-screen flex items-center justify-start pl-24">
             asdasd
         </div>
+    </div>
+    <div v-if="show === false" class="text-white flex gap-4">
+        <Heading id="introduction-heading" size="h1">Coming Soon...</Heading>
     </div>
 </template>
