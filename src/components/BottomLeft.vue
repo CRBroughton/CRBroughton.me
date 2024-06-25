@@ -1,14 +1,15 @@
 <script setup lang="ts">
-
+import Heading from "./Heading.vue";
+import Paragraph from "./Paragraph.vue";
 </script>
 
 <template>
-    <h1 class="scroll-m-20 font-extrabold tracking-tight text-3xl ">Interests</h1>
-    <h2 class="scroll-m-20 font-normal tracking-tight text-xl ">When I'm not programming, you can usually find me:
-    </h2>
-    <h2 class="scroll-m-20 font-normal tracking-tight text ">Playing my guitar and singing</h2>
-    <h2 class="scroll-m-20 font-normal tracking-tight text ">Reading through a new book</h2>
-    <h2 class="scroll-m-20 font-normal tracking-tight text ">Practicing my drawing</h2>
+    <Heading size="h1">Interests</Heading>
+    <Heading size="h2">When I'm not programming, you can usually find me:
+    </Heading>
+    <Paragraph>Playing my guitar and singing</Paragraph>
+    <Paragraph>Reading through a new book</Paragraph>
+    <Paragraph>Practicing my drawing</Paragraph>
 </template>
 
 
