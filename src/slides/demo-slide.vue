@@ -3,6 +3,7 @@ import { onMounted, ref } from "vue";
 import Heading from "../components/Heading.vue";
 import { useSlides } from '../createSlides'
 import anime from "animejs";
+import {ArrowBigLeft} from 'lucide-vue-next'
 
 let heading: HTMLElement | null
 let testButton: HTMLElement | null
@@ -57,6 +58,7 @@ onMounted(() => {
         <div v-if="showAnimatedSlide" class="w-full h-screen flex items-center justify-start pl-24">
             asdasd
         </div>
+        <ArrowBigLeft/>
     </div>
 </template>
 ../createSlides
