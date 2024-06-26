@@ -40,6 +40,8 @@ export function useSlides(props: { states: anime.AnimeInstance[] }) {
                 return
             }
 
+            // TODO - potential array overflow causing sticky
+            // at end of array
             if (currentPosition.value >= states.values.length + 2) {
                 currentPosition.value = states.values.length + 2
                 return
