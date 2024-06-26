@@ -1,7 +1,8 @@
 <script setup lang="ts">
 import { onMounted, ref } from "vue";
 import Heading from "../components/Heading.vue";
-import { useGenerator } from '../generator'
+import { useSlides } from '../createSlides'
+import anime from "animejs";
 
 let heading: HTMLElement | null
 let testButton: HTMLElement | null
@@ -11,28 +12,36 @@ onMounted(() => {
     heading = document.getElementById('introduction-heading');
     testButton = document.getElementById('test-button');
 
-    const { generator } = useGenerator({
-        states: [{
+    const { callSlide, revert } = useSlides({
+        states: [anime({
             targets: heading,
             scale: 0.4,
             paddingBottom: '500px',
             duration: 1000,
-            easing: 'linear'
-        },
-        {
+            easing: 'linear',
+            autoplay: false,
+        }),
+        anime({
             targets: testButton,
             translateX: 500,
             duration: 1000,
-            easing: 'linear'
-        }]
+            easing: 'linear',
+            autoplay: false,
+
+        })]
     })
 
     document.addEventListener("keypress", (event) => {
+        console.log('event', event)
         if (event.key === "d") {
-            console.log('hello')
-            generator().next()
+            console.log('forward...')
+            callSlide()
         }
-    });
+        if (event.key === 'a') {
+            console.log('reverting')
+            revert()
+        }
+    })
 })
 </script>
 
@@ -50,3 +59,4 @@ onMounted(() => {
         </div>
     </div>
 </template>
+../createSlides
