@@ -17,7 +17,6 @@ function run(cb: () => void) {
     }
 }
 
-
 onMounted(() => {
     heading = document.getElementById('introduction-heading');
     testButton = document.getElementById('test-button');
@@ -49,23 +48,14 @@ onMounted(() => {
     document.addEventListener("keypress", async (event) => {
         if (running.value !== true) {
             if (event.key === "d") {
-                console.log('forward...')
                 isRunning.value = true
-                console.log(isRunning.value)
-
                 await callSlide()
                 isRunning.value = false
-                console.log(isRunning.value)
-
             }
             if (event.key === 'a') {
                 isRunning.value = true
-                console.log(isRunning.value)
-
                 await revert()
                 isRunning.value = false
-                console.log(isRunning.value)
-
             }
         }
     })
