@@ -40,15 +40,13 @@ export function useSlides(props: { states: anime.AnimeInstance[] }) {
                 return
             }
 
-            // TODO - potential array overflow causing sticky
-            // at end of array
-            if (currentPosition.value >= states.values.length + 2) {
-                currentPosition.value = states.values.length + 2
+            if (currentPosition.value >= states.length + 1) {
+                currentPosition.value = states.length + 1
                 return
             }
             isRunning.value = true
             states[currentPosition.value].play()
-            if (currentPosition.value > states.values.length + 1) {
+            if (currentPosition.value >= states.length + 1) {
                 // emit here for resets / change slides
                 // currentPosition.value = 0
             } else {
@@ -57,7 +55,7 @@ export function useSlides(props: { states: anime.AnimeInstance[] }) {
             setTimeout(() => {
                 isRunning.value = false
                 res('complete')
-            }, duration)
+            },  )
         })
 
     }
