@@ -14,7 +14,7 @@ function run(cb: () => void) {
         cb()
     }
 }
-const props = defineProps<{ slides: anime.AnimeAnimParams[] }>()
+const props = defineProps<{ slides: anime.AnimeAnimParams[], duration?: number }>()
 
 onMounted(() => {
     const states: anime.AnimeInstance[] = []
@@ -22,7 +22,7 @@ onMounted(() => {
     for (let index = 0; index < props.slides.length; index++) {
         states.push(anime({
             ...props.slides[index],
-            duration: timer.value === true ? 1 : props.slides[index].duration,
+            duration: timer.value === true ? props.duration ?? 1 : props.slides[index].duration,
             targets: document.querySelectorAll(String(props.slides[index].targets))
         }))
 
