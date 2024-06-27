@@ -7,37 +7,44 @@ import anime from "animejs";
 const slides = ref<anime.AnimeAnimParams[]>([])
 slides.value = [
     {
-        target: 'introduction-heading',
-        scale: 0.4,
-        paddingBottom: '500px',
+        targets: '.introduction-heading',
+        left: 300,
+        top: 100,
         duration: 1000,
-        easing: 'linear',
+        easing: 'easeInOutCubic',
         autoplay: false,
     },
     {
-        target: 'test-button',
-        translateX: 500,
-        duration: 1000,
-        easing: 'linear',
+        targets: '.intro-paragraph-1, .intro-paragraph-2',
+        opacity: 1,
+        easing: 'easeInOutCubic',
         autoplay: false,
+        keyframes: [
+            { translateY: -40 },
+        ],
     },
-    {
-        target: 'test-button',
-        translateX: -500,
-        duration: 1000,
-        easing: 'linear',
-        autoplay: false,
-    }
-]
+] satisfies anime.AnimeAnimParams[]
 </script>
 
 <template>
-    <SlideArena :slides="slides">
+    <SlideArena :slides>
         <div class="text-white flex gap-4 w-full">
             <div class="w-full h-screen flex items-center justify-center">
                 <div class="flex flex-col gap-8">
-                    <Heading id="introduction-heading" size="h1" style="scale: 2.4">Atomic Components</Heading>
-                    <button id="test-button" class="bg-slate-200 text-black py-1 px-8 rounded-lg">Click</button>
+                    <Heading size="slide-intro"
+                        class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 introduction-heading">
+                        Atomic Components
+                    </Heading>
+                    <ol>
+                        <li>
+                            <div class="absolute left-[100px] top-[200px] opacity-0 intro-paragraph-1">
+                                <Heading size="h2">The smallest possible atomic part</Heading>
+                            </div>
+                            <div class="absolute left-[100px] top-[230px] opacity-0 intro-paragraph-2">
+                                <Heading size="h2">The smallest possible atomic part</Heading>
+                            </div>
+                        </li>
+                    </ol>
                 </div>
             </div>
         </div>

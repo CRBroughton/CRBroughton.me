@@ -20,34 +20,29 @@ onMounted(() => {
     for (let index = 0; index < props.slides.length; index++) {
        states.push(anime({
         ...props.slides[index],
-        targets: document.getElementById(String(props.slides[index].target))
+        targets: document.querySelectorAll(String(props.slides[index].targets))
        }))
         
     }
 
-    console.log(states.length)
-
     const { callSlide, revert, isRunning } = useSlides({
         states,
-    })
-
-    watch(() => isRunning.value, () => {
-        running.value = isRunning.value
     })
     forward = callSlide
     back = revert
 
+    watch(() => isRunning.value, () => {
+        running.value = isRunning.value
+    })
+
+
     document.addEventListener("keypress", async (event) => {
         if (running.value !== true) {
             if (event.key === "d") {
-                isRunning.value = true
                 await callSlide()
-                isRunning.value = false
             }
             if (event.key === 'a') {
-                isRunning.value = true
                 await revert()
-                isRunning.value = false
             }
         }
     })
@@ -65,10 +60,10 @@ const buttonClasses = computed(() => {
         <slot />
         <div class="flex absolute bottom-0 right-0 p-4">
             <button :class="buttonClasses" :disabled="running">
-                <ArrowBigLeft class="w-14 h-14" @click="run(back)" />
+                <ArrowBigLeft class="w-14 h-14 text-white" @click="run(back)" />
             </button>
             <button :class="buttonClasses" :disabled="running">
-                <ArrowBigRight class="w-14 h-14" @click="run(forward)" />
+                <ArrowBigRight class="w-14 h-14 text-white" @click="run(forward)" />
             </button>
         </div>
     </div>
