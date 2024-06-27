@@ -19,6 +19,7 @@ slides.value = [
         opacity: 1,
         easing: 'easeInOutCubic',
         autoplay: false,
+        duration: 1000,
         keyframes: [
             { translateY: -40 },
         ],
