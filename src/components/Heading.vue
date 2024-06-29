@@ -10,7 +10,7 @@ const classes = computed(() => {
         "scroll-m-20 font-extrabold tracking-tight text-3xl": props.size === 'h1',
         'scroll-m-20 font-normal tracking-tight text-xl': props.size === 'h2',
         'scroll-m-20 font-normal tracking-tight text': props.size === 'h2',
-        'scroll-m-20 font-extrabold tracking-tight text-5xl': props.size === 'slide-intro'
+        'scroll-m-20 font-extrabold tracking-tight text-7xl': props.size === 'slide-intro'
 
     }
 })
