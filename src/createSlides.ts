@@ -55,7 +55,7 @@ export function useSlides(props: { states: anime.AnimeInstance[] }) {
             setTimeout(() => {
                 isRunning.value = false
                 res('complete')
-            },  )
+            }, duration)
         })
 
     }

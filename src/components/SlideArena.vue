@@ -59,8 +59,8 @@ const buttonClasses = computed(() => {
 
 const timerButtonClasses = computed(() => {
     return {
-        'text-red-500': timer.value === false,
-        'text-green-500': timer.value === true,
+        'text-red-300': timer.value === false,
+        'text-green-300': timer.value === true,
 
     }
 })
@@ -74,16 +74,19 @@ function skipDuration() {
 <template>
     <div>
         <slot />
-        <div class="flex absolute bottom-0 right-0 p-4">
+        <div class="w-full flex items-center absolute bottom-0 right-0 p-4">
+            <div class="relative mr-auto">
+                <h4 class="font-bold text-slate-600">Navigate with A & D</h4>
+            </div>
             <button :class="timerButtonClasses" :disabled="running">
-                <component :is="timer === true ? ChevronsRight : ChevronRight" class="w-10 h-10"    @click="skipDuration">
+                <component :is="timer === true ? ChevronsRight : ChevronRight" class="w-10 h-10" @click="skipDuration">
                 </component>
             </button>
             <button :class="buttonClasses" :disabled="running">
-                <ArrowBigLeft class="w-10 h-10 text-white" @click="run(back)" />
+                <ArrowBigLeft class="w-10 h-10 text-slate-300" @click="run(back)" />
             </button>
             <button :class="buttonClasses" :disabled="running">
-                <ArrowBigRight class="w-10 h-10 text-white" @click="run(forward)" />
+                <ArrowBigRight class="w-10 h-10 text-slate-300" @click="run(forward)" />
             </button>
         </div>
     </div>
