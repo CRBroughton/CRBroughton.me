@@ -2,8 +2,10 @@
 import { onMounted, ref, computed, watch } from "vue";
 import { useSlides } from '../createSlides'
 import anime from "animejs";
-import { ArrowBigLeft, ArrowBigRight, ChevronRight, ChevronsRight } from 'lucide-vue-next'
+import { ArrowBigLeft, ArrowBigRight, ChevronRight, ChevronsRight, Text, Projector } from 'lucide-vue-next'
 import { useStorage } from '@vueuse/core'
+import Heading from "./Heading.vue"
+import Paragraph from "./Paragraph.vue";
 
 const running = ref(false)
 const timer = useStorage('slide-duration-skip', true)
@@ -14,7 +16,12 @@ function run(cb: () => void) {
         cb()
     }
 }
-const props = defineProps<{ slides: anime.AnimeAnimParams[], duration?: number }>()
+
+type Slide = anime.AnimeAnimParams[] & {
+    slideHeading?: string
+    slideText?: string
+}[]
+const props = defineProps<{ slides: Slide, duration?: number }>()
 
 onMounted(() => {
     const states: anime.AnimeInstance[] = []
@@ -69,15 +76,29 @@ function skipDuration() {
     localStorage.setItem('slide-duration-skip', String(!timer.value))
     window.location.reload()
 }
+
+const showText = ref(false)
 </script>
 
 <template>
-    <div>
+    <div v-if="showText === false">
         <slot />
-        <div class="w-full flex items-center absolute bottom-0 right-0 p-4">
-            <div class="relative mr-auto">
-                <h4 class="font-bold text-slate-600">Navigate with A & D</h4>
-            </div>
+    </div>
+    <div v-else class="w-full text-white container px-10 py-10 lg:px-24 flex flex-col gap-12">
+        <div v-for="(slide, index) in slides" :key="index">
+            <Heading size="h1">{{ slide.slideHeading }}</Heading>
+            <Heading size="h2"> {{ slide.slideText }}</Heading>
+        </div>
+    </div>
+    <div class="w-full flex items-center fixed bottom-0 right-0 p-4">
+        <div class="relative mr-auto">
+            <h4 class="font-bold text-slate-600">Navigate with A & D</h4>
+        </div>
+        <button :class="buttonClasses" :disabled="running">
+            <component :is="showText === true ? Projector : Text" class="w-10 h-10 text-slate-300"
+                @click="showText = !showText" />
+        </button>
+        <div v-if="showText === false" class="flex">
             <button :class="timerButtonClasses" :disabled="running">
                 <component :is="timer === true ? ChevronsRight : ChevronRight" class="w-10 h-10" @click="skipDuration">
                 </component>

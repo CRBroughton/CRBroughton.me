@@ -8,6 +8,8 @@ import { useColours } from '../atoms/colours'
 
 const { present_atom, primary, secondary, warning, slate_bg, slate_text } = useColours()
 
+const asd = "lorem"
+
 const slides = ref<anime.AnimeAnimParams[]>([])
 slides.value = [
     {
@@ -16,6 +18,8 @@ slides.value = [
         duration: 300,
         easing: 'easeInOutCubic',
         autoplay: false,
+        slideHeading: "Introduction",
+        slideText: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
     },
     {
         targets: '.heading-2',
@@ -23,6 +27,8 @@ slides.value = [
         duration: 300,
         easing: 'easeInOutCubic',
         autoplay: false,
+        slideHeading: "Introduction",
+        slideText: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
     },
     {
         targets: '.heading-3',
@@ -30,6 +36,8 @@ slides.value = [
         duration: 300,
         easing: 'easeInOutCubic',
         autoplay: false,
+        slideHeading: "Introduction",
+        slideText: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
     },
     {
         targets: '.atom-headings',
@@ -37,6 +45,8 @@ slides.value = [
         duration: 300,
         easing: 'easeInOutCubic',
         autoplay: false,
+        slideHeading: "Introduction",
+        slideText: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
     },
     {
         targets: '.intro-atomic-design',
@@ -46,6 +56,8 @@ slides.value = [
         duration: 1000,
         easing: 'easeInOutCubic',
         autoplay: false,
+        slideHeading: "Introduction",
+        slideText: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
     },
     {
         targets: '.colour-atoms, .colour-bg-heading',
@@ -53,6 +65,8 @@ slides.value = [
         duration: 600,
         easing: 'easeInOutCubic',
         autoplay: false,
+        slideHeading: "Introduction",
+        slideText: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
     },
     {
         targets: '.colour-atoms, .colour-bg-heading',
@@ -133,14 +147,22 @@ slides.value = [
 
                 <div
                     class="spacing-atoms absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-0 flex flex-col gap-8 justify-center items-center">
-                    <div class="type-atoms-foxes flex flex-col gap-4">
+                    <div class="type-atoms-foxes flex flex-col justify-center items-center gap-4">
                         <div class="flex justify-center items-center w-14 h-14 rounded-lg
                         bg-stripes-white
                         ">
                             <div class="w-10 h-10 bg-slate-500 rounded-lg"></div>
                         </div>
-                        <div class="w-14 h-14 bg-slate-500 rounded-lg"></div>
-                        <div class="w-16 h-16 bg-slate-500 rounded-lg"></div>
+                        <div class="flex justify-center items-center w-16 h-16 rounded-lg
+                        bg-stripes-white
+                        ">
+                            <div class="w-10 h-10 bg-slate-500 rounded-lg"></div>
+                        </div>
+                        <div class="flex justify-center items-center w-20 h-20 rounded-lg
+                        bg-stripes-white
+                        ">
+                            <div class="w-10 h-10 bg-slate-500 rounded-lg"></div>
+                        </div>
                     </div>
                     <h1
                         class="spacing-bg-heading absolute font-extrabold uppercase text-opacity-10 text-[500px] text-slate-700 opacity-0 outline-2 drop-shadow-[3.1px_1px_rgba(0,0,0,0.3)]">
@@ -154,7 +176,7 @@ slides.value = [
 
 <style scoped>
 .bg-stripes-white {
-  background-image:linear-gradient(135deg,#ffffffbf 10%,#0000 0,#0000 50%,#ffffffbf 0,#662e2ebf 60%,#0000 0,#0000);
-  background-size:7.07px 7.07px;
+    background-image: linear-gradient(135deg, #ffffffbf 10%, #0000 0, #0000 50%, #ffffffbf 0, #662e2ebf 60%, #0000 0, #0000);
+    background-size: 7.07px 7.07px;
 }
 </style>
