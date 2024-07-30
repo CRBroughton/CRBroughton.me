@@ -8,12 +8,35 @@ import { ref, onMounted, onBeforeUnmount, type VNodeRef } from "vue";
 const sky = ref<VNodeRef | undefined>(undefined);
 const center = ref({ x: 0, y: 0 });
 
-const dot = (i: number) => {
-  const size = Math.round(Math.random() + 1);
+function getRandomColor() {
+  const random = Math.random() * 100;
+  if (random <= 60) {
+    return '#fcfcd9'; // 60% chance for yellow
+  } else if (random <= 90) {
+    return 'white'; // 30% chance for white
+  } else {
+    return '#ab4949'; // 10% chance for red
+  }
+}
+
+function getRandomSize(size: number) {
+  if (size <= 60) {
+    return 4; // 60% chance for yellow
+  } else if (size <= 90) {
+    return 2 // 30% chance for white
+  } else {
+    return 1 // 10% chance for red
+  }
+}
+
+const dot = (i: numbers, size: number) => {
   const root = document.createElement("span");
   root.style.top = center.value.y + "px";
   root.style.left = center.value.x + "px";
-  root.classList.add("star", `size-${size}`, `axis-${i}`);
+  root.style.width = size + "px";
+  root.style.height = size + 'px';
+  root.style.backgroundColor = getRandomColor();
+  root.classList.add("star", `axis-${i}`);
   return root;
 };
 
@@ -31,7 +54,8 @@ const updateCenter = () => {
     };
     clear();
     for (let i = 0; i < 360; i++) {
-      sky.value.appendChild(dot(i));
+      const size = Math.round(Math.random() * 100);
+      sky.value.appendChild(dot(i, getRandomSize(size)));
     }
   }
 };
@@ -142,12 +166,13 @@ body {
   width: 100%;
   height: 100%;
   background-color: black;
+  position: absolute;
+  overflow: hidden;
 }
 
 .star {
   opacity: 0;
   position: absolute;
-  background: white;
   box-shadow: 0px 0px 20px 0px rgb(255, 255, 255);
   border-radius: 100%;
   transform-origin: 0, 0;
@@ -162,8 +187,8 @@ body {
 }
 
 .size-2 {
-  width: 2px;
-  height: 2px;
+  width: 5px;
+  height: 5px;
 }
 
 @for $i from 1 to 361 {
@@ -171,8 +196,8 @@ body {
   $angle: $i - reminder($i, 4);
 
   .axis-#{$i} {
-    animation: anim#{$angle} #{$t}ms,
-    fade#{random(10)} #{$t}ms;
+    animation: anim#{$angle} #{$t}ms, fade#{random(10)} #{$t}ms, blur #{$t}ms infinite, shine 2s infinite;
+
   }
 }
 
@@ -208,4 +233,22 @@ body {
     }
   }
 }
+
+@keyframes shine {
+  0%, 100% {
+    box-shadow: 0 0 8px 1px rgba(186, 186, 186, 0.5);
+  }
+ 
+}
+
+@keyframes blur {
+  0% {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
 </style>
