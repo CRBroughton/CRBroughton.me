@@ -29,7 +29,7 @@ function getRandomSize(size: number) {
   }
 }
 
-const dot = (i: numbers, size: number) => {
+const dot = (i: number, size: number) => {
   const root = document.createElement("span");
   root.style.top = center.value.y + "px";
   root.style.left = center.value.x + "px";
@@ -127,7 +127,7 @@ $_precision: 10;
   $sin: $a;
 
   @for $n from 1 through $_precision {
-    $sin: $sin + (pow(-1, $n) / fact(2 * $n + 1)) * pow($a, (2 * $n + 1));
+    $sin: $sin + (calc(pow(-1, $n) / fact(2 * $n + 1))) * pow($a, (2 * $n + 1));
   }
 
   @return $sin;
@@ -138,7 +138,7 @@ $_precision: 10;
   $cos: 1;
 
   @for $n from 1 through $_precision {
-    $cos: $cos + (pow(-1, $n) / fact(2 * $n)) * pow($a, 2 * $n);
+    $cos: $cos + (calc(pow(-1, $n) / fact(2 * $n))) * pow($a, 2 * $n);
   }
 
   @return $cos;
@@ -149,9 +149,9 @@ $_precision: 10;
 }
 
 @function reminder($origin, $mod) {
-  $q: if(($origin / $mod) > 0,
-      floor($origin / $mod),
-      ceil($origin / $mod));
+  $q: if((calc($origin / $mod)) > 0,
+      floor(calc($origin / $mod)),
+      ceil(calc($origin / $mod)));
   @return $origin - ($mod * $q);
 }
 
@@ -224,7 +224,7 @@ body {
   $a: $i * 4;
 
   @keyframes anim#{$a} {
-    $angle: $pi * 2 * ($a / 360);
+    $angle: $pi * 2 * calc($a / 360);
     $y: 80 * sin($angle);
     $x: 80 * cos($angle);
 
