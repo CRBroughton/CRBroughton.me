@@ -5,7 +5,7 @@ import SlideArena from '../components/SlideArena.vue'
 import anime from "animejs";
 import Atom from '../components/Atom.vue'
 import { useColours } from '../atoms/colours'
-
+import Stars from "../components/Stars.vue";
 const { present_atom, primary, secondary, warning, slate_bg, slate_text } = useColours()
 
 const asd = "lorem"
@@ -13,12 +13,39 @@ const asd = "lorem"
 const slides = ref<anime.AnimeAnimParams[]>([])
 slides.value = [
     {
-        targets: '.heading-1',
+        targets: '.cosmic-voyage-introduction',
+        opacity: 1,
+        duration: 1000,
+        autoplay: false,
+    },
+    {
+        targets: '.stars',
+        opacity: 0,
+        duration: 1000,
+        autoplay: false,
+    },
+    {
+        targets: '.cosmic-voyage-introduction',
+        opacity: 0,
+        duration: 1000,
+        autoplay: false,
+    },
+    {
+        targets: '.intro-atomic-design',
         opacity: 1,
         duration: 300,
         easing: 'easeInOutCubic',
         autoplay: false,
         slideHeading: "Introduction",
+        slideText: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+    },
+    {
+        targets: '.heading-1',
+        opacity: 1,
+        duration: 300,
+        easing: 'easeInOutCubic',
+        autoplay: false,
+        slideHeading: "Tokens",
         slideText: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
     },
     {
@@ -101,24 +128,53 @@ slides.value = [
 
 <template>
     <SlideArena :slides :duration="120">
-        <div class="w-screen h-screen flex">
+        <div class="w-screen h-screen flex bg-black">
             <div class="w-full flex justify-center items-center text-white outline-double outline-2">
-                <h1
-                    :class="`colour-bg-heading font-extrabold uppercase text-opacity-10 text-[500px]  opacity-0 outline-2 drop-shadow-[3.1px_1px_rgba(0,0,0,0.3)] ${slate_text}`">
-                    Colour</h1>
+
+                <!-- Stars -->
+                <Stars class="stars" />
+
+                <!-- Introduction - Cosmic Voyage -->
                 <div
-                    class="intro-atomic-design absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 ml-14 opacity-1">
-                    <Atom absolute :colour="present_atom" />
+                    class="cosmic-voyage-introduction absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-0">
                     <Heading size="slide-intro">
-                        Atomic Design
+                        A Cosmic Voyage
                     </Heading>
+                    <Heading size="h1">
+                        Through Front-end Development
+                    </Heading>
+                </div>
+
+                <div class="bg-slate-900 w-full h-full"/>
+
+                <!-- Need a section for the component -->
+
+
+                <!-- The Atom -->
+
+                <div
+                    class="intro-atomic-design absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 ml-24 opacity-0">
+                    <Atom absolute class="left-[-150px]" :colour="present_atom" />
+                    <Heading size="slide-intro">
+                            Atoms
+                        </Heading>
                     <div class="atom-headings">
+                        
                         <Heading class="heading-1 opacity-0" size="h2">The smallest possible atomic part</Heading>
                         <Heading class="heading-2 opacity-0" size="h2">Atoms can be colours, spacing, fonts</Heading>
                         <Heading class="heading-3 opacity-0" size="h2">Molecular structures (components) are built with
-                            Atoms</Heading>
+                            Atoms
+                        </Heading>
                     </div>
                 </div>
+
+
+
+
+
+
+
+
 
 
                 <div
@@ -129,8 +185,11 @@ slides.value = [
                         <Atom :colour="warning" />
                         <Atom :colour="slate_bg" />
                     </div>
+                 
                 </div>
-
+                <h1
+                    :class="`colour-bg-heading font-extrabold uppercase text-opacity-10 text-[500px]  opacity-0 outline-2 drop-shadow-[3.1px_1px_rgba(0,0,0,0.3)] ${slate_text}`">
+                    Colour</h1>
 
                 <div
                     class="type-atoms absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-0 flex flex-col gap-8 justify-center items-center">

@@ -8,7 +8,7 @@ import GridContainer from './GridContainer.vue'
 </script>
 
 <template>
-    <div class="grid justify-center items-center bg-gray-900 min-h-screen w-screen xl:max-w-[1920px] xl:max-h-[1080px]">
+    <div class="grid justify-center items-center min-h-screen w-screen xl:max-w-[1920px] xl:max-h-[1080px]">
         <GridContainer>
             <template #top-left>
                 <TopLeft />
