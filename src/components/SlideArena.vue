@@ -30,7 +30,14 @@ onMounted(() => {
         states.push(anime({
             ...props.slides[index],
             duration: timer.value === true ? props.duration ?? 1 : props.slides[index].duration,
-            targets: document.querySelectorAll(String(props.slides[index].targets))
+            targets: document.querySelectorAll(String(props.slides[index].targets)),
+            update: function (anim) {
+            anim.animatables.forEach((animatable) => {
+                if (animatable.target.classList)
+                    if (animatable.target.style.opacity == '0') animatable.target.classList.add('hidden');
+                    else animatable.target.classList.remove('hidden');
+            });
+		}
         }))
 
     }

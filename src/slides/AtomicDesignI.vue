@@ -139,7 +139,7 @@ slides.value = [
 
                 <!-- Introduction - Cosmic Voyage -->
                 <div
-                    class="cosmic-voyage-introduction absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-0">
+                    class="cosmic-voyage-introduction absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-0 hidden">
                     <Heading size="slide-intro">
                         A Cosmic Voyage
                     </Heading>
@@ -156,7 +156,7 @@ slides.value = [
                 <!-- The Atom -->
 
                 <div
-                    class="intro-atomic-design absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 ml-24 opacity-0">
+                    class="intro-atomic-design absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 ml-24 opacity-0 hidden">
                     <Atom absolute class="left-[-150px]" :colour="present_atom" />
                     <Heading size="slide-intro">
                             Atoms
@@ -181,7 +181,7 @@ slides.value = [
 
 
                 <div
-                    class="colour-atoms absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-0 flex flex-col gap-8 justify-center ">
+                    class="colour-atoms absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-0 hidden flex-col gap-8 justify-center ">
                     <div class="flex gap-4">
                         <Atom :colour="primary" />
                         <Atom :colour="secondary" />
@@ -191,11 +191,11 @@ slides.value = [
                  
                 </div>
                 <h1
-                    :class="`colour-bg-heading font-extrabold uppercase text-opacity-10 text-[500px]  opacity-0 outline-2 drop-shadow-[3.1px_1px_rgba(0,0,0,0.3)] ${slate_text}`">
+                    :class="`colour-bg-heading font-extrabold uppercase text-opacity-10 text-[500px]  opacity-0 hidden outline-2 drop-shadow-[3.1px_1px_rgba(0,0,0,0.3)] ${slate_text}`">
                     Colour</h1>
 
                 <div
-                    class="type-atoms absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-0 flex flex-col gap-8 justify-center items-center">
+                    class="type-atoms absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-0 hidden flex flex-col gap-8 justify-center items-center">
                     <div class="type-atoms-foxes flex flex-col gap-4">
                         <Heading size="h1">The quick brown fox jumps over the lazy dog</Heading>
                         <Heading size="h2">The quick brown fox jumps over the lazy dog</Heading>
@@ -208,7 +208,7 @@ slides.value = [
                 </div>
 
                 <div
-                    class="spacing-atoms absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-0 flex flex-col gap-8 justify-center items-center">
+                    class="spacing-atoms absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-0 hidden flex flex-col gap-8 justify-center items-center">
                     <div class="type-atoms-foxes flex flex-col justify-center items-center gap-4">
                         <div class="flex justify-center items-center w-14 h-14 rounded-lg
                         bg-stripes-white
