@@ -20,7 +20,11 @@ function run(cb: () => void) {
 type Slide = anime.AnimeAnimParams[] & {
     slideHeading?: string
     slideText?: string
+    customUpdate?: () => void
 }[]
+function isCustomFunction(func: (() => void) | undefined): func is () => void {
+    return (func as (() => void)) !== undefined;
+}
 const props = defineProps<{ slides: Slide, duration?: number }>()
 
 onMounted(() => {
@@ -31,13 +35,17 @@ onMounted(() => {
             ...props.slides[index],
             duration: timer.value === true ? props.duration ?? 1 : props.slides[index].duration,
             targets: document.querySelectorAll(String(props.slides[index].targets)),
-            update: function (anim) {
-            anim.animatables.forEach((animatable) => {
-                if (animatable.target.classList)
-                    if (animatable.target.style.opacity == '0') animatable.target.classList.add('hidden');
-                    else animatable.target.classList.remove('hidden');
-            });
-		}
+            changeComplete: function (anim) {
+                anim.animatables.forEach((animatable) => {
+                    if (animatable.target.classList)
+                        if (animatable.target.style.opacity == '0') animatable.target.classList.add('hidden');
+                        else animatable.target.classList.remove('hidden');
+                });
+                const update = props.slides[index].customUpdate
+                if (update) {
+                    update()
+                }
+            }
         }))
 
     }
