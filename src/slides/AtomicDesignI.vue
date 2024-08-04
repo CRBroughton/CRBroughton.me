@@ -18,63 +18,45 @@ slides.value = [
     {
         targets: '.cosmic-voyage-introduction',
         opacity: 1,
-        duration: 1000,
-        autoplay: false,
     },
     {
         targets: '.stars',
-        opacity: 0,
-        duration: 1000,
-        autoplay: false,
+        opacity: 0.1,
     },
     {
         targets: '.cosmic-voyage-introduction',
         opacity: 0,
-        duration: 1000,
-        autoplay: false,
     },
     {
         targets: '.intro-atomic-design',
         opacity: 1,
-        duration: 300,
-        easing: 'easeInOutCubic',
-        autoplay: false,
         slideHeading: "Introduction",
         slideText: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
     },
     {
         targets: '.heading-1',
         opacity: 1,
-        duration: 300,
-        easing: 'easeInOutCubic',
-        autoplay: false,
+        hide: false,
         slideHeading: "Tokens",
         slideText: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
     },
     {
         targets: '.heading-2',
         opacity: 1,
-        duration: 300,
-        easing: 'easeInOutCubic',
-        autoplay: false,
+        hide: false,
         slideHeading: "Tokens",
         slideText: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
     },
     {
         targets: '.heading-3',
         opacity: 1,
-        duration: 300,
-        easing: 'easeInOutCubic',
-        autoplay: false,
+        hide: false,
         slideHeading: "Colours",
         slideText: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
     },
     {
         targets: '.atom-headings',
         opacity: 0,
-        duration: 300,
-        easing: 'easeInOutCubic',
-        autoplay: false,
         slideHeading: "Fonts",
         slideText: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
     },
@@ -84,8 +66,6 @@ slides.value = [
         left: 400,
         top: 200,
         duration: 1000,
-        easing: 'easeInOutCubic',
-        autoplay: false,
         slideHeading: "Spacing",
         slideText: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
     },
@@ -94,7 +74,6 @@ slides.value = [
         opacity: 1,
         duration: 600,
         easing: 'easeInOutCubic',
-        autoplay: false,
         slideHeading: "Introduction",
         slideText: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
     },
@@ -102,29 +81,21 @@ slides.value = [
         targets: '.colour-atoms, .colour-bg-heading',
         opacity: 0,
         duration: 600,
-        easing: 'easeInOutCubic',
-        autoplay: false,
     },
     {
         targets: '.type-atoms, .type-bg-heading',
         opacity: 1,
         duration: 600,
-        easing: 'easeInOutCubic',
-        autoplay: false,
     },
     {
         targets: '.type-atoms, .type-bg-heading',
         opacity: 0,
         duration: 600,
-        easing: 'easeInOutCubic',
-        autoplay: false,
     },
     {
         targets: '.spacing-atoms, .spacing-bg-heading',
         opacity: 1,
         duration: 600,
-        easing: 'easeInOutCubic',
-        autoplay: false,
     },
 ] satisfies anime.AnimeAnimParams[]
 </script>
@@ -148,7 +119,6 @@ slides.value = [
                     </Heading>
                 </div>
 
-                <div class="bg-slate-900 w-full h-full"/>
 
                 <!-- Need a section for the component -->
 
