@@ -101,7 +101,7 @@ const showText = ref(false)
     <div v-if="showText === false">
         <slot />
     </div>
-    <div v-else class="w-full text-white container px-10 py-10 lg:px-24 flex flex-col gap-12">
+    <div v-else class="w-full text-white bg-slate-900 container px-10 py-10 lg:px-24 flex flex-col gap-12">
         <div v-for="(slide, index) in slides" :key="index">
             <Heading size="h1">{{ slide.slideHeading }}</Heading>
             <Heading size="h2"> {{ slide.slideText }}</Heading>
