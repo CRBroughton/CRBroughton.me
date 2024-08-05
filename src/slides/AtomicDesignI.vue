@@ -8,11 +8,6 @@ import { useColours } from '../atoms/colours'
 import Stars from "../components/Stars.vue";
 const { present_atom, primary, secondary, warning, slate_bg, slate_text } = useColours()
 
-const asd = "lorem"
-
-// TODO - need either refs to elements to hide them / remove from DOM
-// or redesign rendering so that absolute elements dont render when not required
-
 const slides = ref<anime.AnimeAnimParams[]>([])
 slides.value = [
     {
