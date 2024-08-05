@@ -5,7 +5,6 @@ import anime from "animejs";
 import { ArrowBigLeft, ArrowBigRight, ChevronRight, ChevronsRight, Text, Projector } from 'lucide-vue-next'
 import { useStorage } from '@vueuse/core'
 import Heading from "./Heading.vue"
-import Paragraph from "./Paragraph.vue";
 
 const running = ref(false)
 const timer = useStorage('slide-duration-skip', true)
@@ -37,7 +36,6 @@ onMounted(() => {
             autoplay: props.slides[index].autoplay ? props.slides[index].autoplay : false,
             easing: props.slides[index].easing ?? 'easeInOutCubic',
             changeComplete: function (anim) {
-                console.log(props.slides[index].hide)
                 if (props.slides[index].hide !== false) {
                     anim.animatables.forEach((animatable) => {
                         if (animatable.target.classList)
