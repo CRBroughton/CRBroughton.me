@@ -8,9 +8,11 @@ import Heading from "./Heading.vue"
 
 const running = ref(false)
 const timer = useStorage('slide-duration-skip', true)
+let direction: 'back' | 'forwards' = 'forwards'
 let back: () => void
 let forward: () => void
-function run(cb: () => void) {
+function run(cb: () => void, dir: typeof direction) {
+    direction = dir
     if (running.value !== true) {
         cb()
     }
@@ -35,19 +37,26 @@ onMounted(() => {
             targets: document.querySelectorAll(String(props.slides[index].targets)),
             autoplay: props.slides[index].autoplay ? props.slides[index].autoplay : false,
             easing: props.slides[index].easing ?? 'easeInOutCubic',
-            changeComplete: function (anim) {
-                if (props.slides[index].hide !== false) {
-                    anim.animatables.forEach((animatable) => {
-                        if (animatable.target.classList)
-                            if (animatable.target.style.opacity == '0') animatable.target.classList.add('hidden');
-                            else animatable.target.classList.remove('hidden');
-                    });
-                    const update = props.slides[index].customUpdate
-                    if (update) {
-                        update()
-                    }
-                }
-            }
+            // changeBegin: function (anim) {
+            //     anim.animatables.forEach((animatable) => {
+            //         if (animatable.target.style.opacity === '0' && direction === 'back') {
+            //             animatable.target.style.opacity = '1'
+            //         }
+            //     })
+            // },
+            // changeComplete: function (anim) {
+            //     if (props.slides[index].hide !== false) {
+            //         anim.animatables.forEach((animatable) => {
+            //             if (animatable.target.classList)
+            //                 if (animatable.target.style.opacity === '0') animatable.target.classList.add('hidden');
+            //                 else animatable.target.classList.remove('hidden');
+            //         });
+            //         const update = props.slides[index].customUpdate
+            //         if (update) {
+            //             update()
+            //         }
+            //     }
+            // }
         }))
 
     }
@@ -66,10 +75,10 @@ onMounted(() => {
     document.addEventListener("keypress", async (event) => {
         if (running.value !== true) {
             if (event.key === "d") {
-                await callSlide()
+                run(forward, 'forwards')
             }
             if (event.key === 'a') {
-                await revert()
+                run(back, 'back')
             }
         }
     })
@@ -121,10 +130,10 @@ const showText = ref(false)
                 </component>
             </button>
             <button :class="buttonClasses" :disabled="running">
-                <ArrowBigLeft class="w-10 h-10 text-slate-300" @click="run(back)" />
+                <ArrowBigLeft class="w-10 h-10 text-slate-300" @click="run(back, 'back')" />
             </button>
             <button :class="buttonClasses" :disabled="running">
-                <ArrowBigRight class="w-10 h-10 text-slate-300" @click="run(forward)" />
+                <ArrowBigRight class="w-10 h-10 text-slate-300" @click="run(forward, 'forwards')" />
             </button>
         </div>
     </div>
