@@ -12,7 +12,9 @@ const slides = ref<anime.AnimeAnimParams[]>([])
 slides.value = [
     {
         targets: '.cosmic-voyage-introduction',
-        opacity: 1,
+        scale: { value: 1, duration: 8000 },
+        opacity: { value: 1, delay: 2000, duration: 4000 },
+        easing: 'easeInOutQuad',
     },
     {
         targets: '.stars',
@@ -102,8 +104,8 @@ slides.value = [
             <Stars class="stars" />
 
             <!-- Introduction - Cosmic Voyage -->
-            <div
-                class="cosmic-voyage-introduction absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-0 ">
+            <div class="cosmic-voyage-introduction absolute top-1/2 left-1/2 opacity-0"
+                style="transform: translate(-50%, -50%) scale(10);">
                 <Heading size="slide-intro">
                     A Cosmic Voyage
                 </Heading>
@@ -118,10 +120,10 @@ slides.value = [
 
             <!-- The Atom -->
 
-            
+
 
             <div
-            class="intro-atomic-design absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-0 ">
+                class="intro-atomic-design absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-0 ">
                 <Atom absolute class="left-[-150px]" :colour="present_atom" />
                 <Heading size="slide-intro">
                     Atoms
@@ -138,18 +140,18 @@ slides.value = [
 
             <div class="w-full flex justify-center">
 
-            <div
-                class="colour-atoms absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-0 flex flex-col gap-8 justify-center items-center">
-                <div class="flex gap-4">
-                    <Atom :colour="primary" />
-                    <Atom :colour="secondary" />
-                    <Atom :colour="warning" />
-                    <Atom :colour="slate_bg" />
+                <div
+                    class="colour-atoms absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-0 flex flex-col gap-8 justify-center items-center">
+                    <div class="flex gap-4">
+                        <Atom :colour="primary" />
+                        <Atom :colour="secondary" />
+                        <Atom :colour="warning" />
+                        <Atom :colour="slate_bg" />
+                    </div>
+                    <h1
+                        class="colour-bg-heading absolute font-extrabold uppercase text-opacity-10 text-[500px] text-slate-700 opacity-0 outline-2 drop-shadow-[3.1px_1px_rgba(0,0,0,0.3)]">
+                        Colour</h1>
                 </div>
-                <h1
-                    class="colour-bg-heading absolute font-extrabold uppercase text-opacity-10 text-[500px] text-slate-700 opacity-0 outline-2 drop-shadow-[3.1px_1px_rgba(0,0,0,0.3)]">
-                    Colour</h1>
-            </div>
                 <div
                     class="type-atoms absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-0 flex flex-col gap-8 justify-center items-center">
                     <div class="type-atoms-foxes flex flex-col gap-4">
