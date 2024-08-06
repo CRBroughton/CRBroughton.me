@@ -57,8 +57,7 @@ slides.value = [
     },
     {
         targets: '.intro-atomic-design',
-        opacity: 1,
-        left: 400,
+        left: 450,
         top: 200,
         duration: 1000,
         slideHeading: "Spacing",
@@ -97,70 +96,62 @@ slides.value = [
 
 <template>
     <SlideArena :slides :duration="120">
-        <div class="w-screen h-screen flex bg-black">
-            <div class="w-full flex justify-center items-center text-white outline-double outline-2">
+        <div class="w-screen h-screen absolute overflow-hidden flex bg-black text-white">
 
-                <!-- Stars -->
-                <Stars class="stars" />
+            <!-- Stars -->
+            <Stars class="stars" />
 
-                <!-- Introduction - Cosmic Voyage -->
-                <div
-                    class="cosmic-voyage-introduction absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-0 ">
-                    <Heading size="slide-intro">
-                        A Cosmic Voyage
-                    </Heading>
-                    <Heading size="h1">
-                        Through Front-end Development
+            <!-- Introduction - Cosmic Voyage -->
+            <div
+                class="cosmic-voyage-introduction absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-0 ">
+                <Heading size="slide-intro">
+                    A Cosmic Voyage
+                </Heading>
+                <Heading size="h1">
+                    Through Front-end Development
+                </Heading>
+            </div>
+
+
+            <!-- Need a section for the component -->
+
+
+            <!-- The Atom -->
+
+            
+
+            <div
+            class="intro-atomic-design absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-0 ">
+                <Atom absolute class="left-[-150px]" :colour="present_atom" />
+                <Heading size="slide-intro">
+                    Atoms
+                </Heading>
+                <div class="atom-headings">
+
+                    <Heading class="heading-1 opacity-0" size="h2">The smallest possible atomic part</Heading>
+                    <Heading class="heading-2 opacity-0" size="h2">Atoms can be colours, spacing, fonts</Heading>
+                    <Heading class="heading-3 opacity-0" size="h2">Molecular structures (components) are built with
+                        Atoms
                     </Heading>
                 </div>
+            </div>
 
+            <div class="w-full flex justify-center">
 
-                <!-- Need a section for the component -->
-
-
-                <!-- The Atom -->
-
-                <div
-                    class="intro-atomic-design absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 ml-24 opacity-0 ">
-                    <Atom absolute class="left-[-150px]" :colour="present_atom" />
-                    <Heading size="slide-intro">
-                            Atoms
-                        </Heading>
-                    <div class="atom-headings">
-                        
-                        <Heading class="heading-1 opacity-0" size="h2">The smallest possible atomic part</Heading>
-                        <Heading class="heading-2 opacity-0" size="h2">Atoms can be colours, spacing, fonts</Heading>
-                        <Heading class="heading-3 opacity-0" size="h2">Molecular structures (components) are built with
-                            Atoms
-                        </Heading>
-                    </div>
-                </div>
-
-
-
-
-
-
-
-
-
-
-                <div
-                    class="colour-atoms absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-0  flex-col gap-8 justify-center ">
-                    <div class="flex gap-4">
-                        <Atom :colour="primary" />
-                        <Atom :colour="secondary" />
-                        <Atom :colour="warning" />
-                        <Atom :colour="slate_bg" />
-                    </div>
-                 
+            <div
+                class="colour-atoms absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-0 flex flex-col gap-8 justify-center items-center">
+                <div class="flex gap-4">
+                    <Atom :colour="primary" />
+                    <Atom :colour="secondary" />
+                    <Atom :colour="warning" />
+                    <Atom :colour="slate_bg" />
                 </div>
                 <h1
-                    :class="`colour-bg-heading font-extrabold uppercase text-opacity-10 text-[500px]  opacity-0  outline-2 drop-shadow-[3.1px_1px_rgba(0,0,0,0.3)] ${slate_text}`">
+                    class="colour-bg-heading absolute font-extrabold uppercase text-opacity-10 text-[500px] text-slate-700 opacity-0 outline-2 drop-shadow-[3.1px_1px_rgba(0,0,0,0.3)]">
                     Colour</h1>
-
+            </div>
                 <div
-                    class="type-atoms absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-0  flex flex-col gap-8 justify-center items-center">
+                    class="type-atoms absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-0 flex flex-col gap-8 justify-center items-center">
                     <div class="type-atoms-foxes flex flex-col gap-4">
                         <Heading size="h1">The quick brown fox jumps over the lazy dog</Heading>
                         <Heading size="h2">The quick brown fox jumps over the lazy dog</Heading>
@@ -173,7 +164,7 @@ slides.value = [
                 </div>
 
                 <div
-                    class="spacing-atoms absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-0  flex flex-col gap-8 justify-center items-center">
+                    class="spacing-atoms absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-0 flex flex-col gap-8 justify-center items-center">
                     <div class="type-atoms-foxes flex flex-col justify-center items-center gap-4">
                         <div class="flex justify-center items-center w-14 h-14 rounded-lg
                         bg-stripes-white
