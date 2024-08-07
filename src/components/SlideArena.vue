@@ -44,19 +44,19 @@ onMounted(() => {
             //         }
             //     })
             // },
-            // changeComplete: function (anim) {
-            //     if (props.slides[index].hide !== false) {
-            //         anim.animatables.forEach((animatable) => {
-            //             if (animatable.target.classList)
-            //                 if (animatable.target.style.opacity === '0') animatable.target.classList.add('hidden');
-            //                 else animatable.target.classList.remove('hidden');
-            //         });
-            //         const update = props.slides[index].customUpdate
-            //         if (update) {
-            //             update()
-            //         }
-            //     }
-            // }
+            changeComplete: function (anim) {
+                if (props.slides[index].hide === true) {
+                    anim.animatables.forEach((animatable) => {
+                        if (animatable.target.classList)
+                            if (animatable.target.style.opacity === '0') animatable.target.classList.add('hidden');
+                            else animatable.target.classList.remove('hidden');
+                    });
+                    const update = props.slides[index].customUpdate
+                    if (update) {
+                        update()
+                    }
+                }
+            }
         }))
 
     }

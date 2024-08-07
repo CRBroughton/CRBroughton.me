@@ -18,7 +18,8 @@ slides.value = [
     },
     {
         targets: '.stars',
-        opacity: 0.1,
+        opacity: 0,
+        hide: true,
     },
     {
         targets: '.cosmic-voyage-introduction',
