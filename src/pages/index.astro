@@ -1,9 +1,17 @@
 ---
 import "@fontsource-variable/manrope";
-import MainLayout from '../layouts/main.astro';
+import MainLayout from "../layouts/main.astro";
 import HomePage from "../components/HomePage.vue";
 ---
 
 <MainLayout>
-	<HomePage />
+	<div
+		class="flex justify-center items-center min-h-screen w-screen bg-slate-900"
+	>
+		<div
+			class="grid justify-center items-center min-h-screen w-screen xl:max-w-[1920px] xl:max-h-[1080px]"
+		>
+			<HomePage />
+		</div>
+	</div>
 </MainLayout>
