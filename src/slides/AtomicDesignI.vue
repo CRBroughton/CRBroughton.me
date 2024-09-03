@@ -6,14 +6,18 @@ import anime from "animejs";
 import Atom from '../components/Atom.vue'
 import { useColours } from '../atoms/colours'
 import Stars from "../components/Stars.vue";
+import Button from '../components/Button.vue'
+import Card from '../components/Card.vue'
+import Image from '../components/Image.vue'
+import CardParagraph from "../components/CardParagraph.vue";
 const { present_atom, primary, secondary, warning, slate_bg, slate_text } = useColours()
 
 const slides = ref<anime.AnimeAnimParams[]>([])
 slides.value = [
     {
         targets: '.cosmic-voyage-introduction',
-        scale: { value: 1, duration: 8000 },
-        opacity: { value: 1, delay: 2000, duration: 4000 },
+        scale: { value: 1, duration: 1000 },
+        opacity: { value: 1, delay: 2000, duration: 1000 },
         easing: 'easeInOutQuad',
     },
     {
@@ -26,6 +30,10 @@ slides.value = [
         opacity: 0,
     },
     {
+        targets: '.intro-component',
+        opacity: 1,
+    },
+    {
         targets: '.intro-atomic-design',
         opacity: 1,
         slideHeading: "Introduction",
@@ -33,22 +41,19 @@ slides.value = [
     },
     {
         targets: '.heading-1',
-        opacity: 1,
-        hide: false,
+        opacity: 0,
         slideHeading: "Tokens",
-        slideText: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+        slideText: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
     },
     {
         targets: '.heading-2',
-        opacity: 1,
-        hide: false,
+        opacity: 0,
         slideHeading: "Tokens",
         slideText: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
     },
     {
         targets: '.heading-3',
-        opacity: 1,
-        hide: false,
+        opacity: 0,
         slideHeading: "Colours",
         slideText: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
     },
@@ -69,6 +74,7 @@ slides.value = [
     {
         targets: '.colour-atoms, .colour-bg-heading',
         opacity: 1,
+        initHide: true,
         duration: 600,
         easing: 'easeInOutCubic',
         slideHeading: "Introduction",
@@ -119,13 +125,34 @@ slides.value = [
             <!-- Need a section for the component -->
 
 
+            <div
+                class="intro-component gap-4 flex flex-col absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-0">
+                <Card>
+                    <template #image>
+                        <Image src="https://www.giftpro.co.uk/wp-content/uploads/2021/06/Tillo-Header.jpg" />
+                    </template>
+                    <template #title>
+                        <CardParagraph theme="dark">A Tillo gift card
+                        </CardParagraph>
+                    </template>
+                    <template #subtitle>
+                        <p>Surprise and delight your family or friends</p>
+                    </template>
+                    <template #buttons>
+                        <Button theme="primary">Buy</Button>
+                        <Button theme="secondary">Details</Button>
+                    </template>
+                </Card>
+            </div>
+
             <!-- The Atom -->
 
 
 
             <div
-                class="intro-atomic-design absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-0 ">
-                <Atom absolute class="left-[-150px]" :colour="present_atom" />
+                class="intro-atomic-design absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-0">
+
+                <!-- <Atom absolute class="left-[-150px]" :colour="present_atom" />
                 <Heading size="slide-intro">
                     Atoms
                 </Heading>
@@ -136,13 +163,13 @@ slides.value = [
                     <Heading class="heading-3 opacity-0" size="h2">Molecular structures (components) are built with
                         Atoms
                     </Heading>
-                </div>
+                </div> -->
             </div>
 
-            <div class="w-full flex justify-center">
+            <div class=" colour-atoms w-full flex justify-center">
 
                 <div
-                    class="colour-atoms absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-0 flex flex-col gap-8 justify-center items-center">
+                    class=" absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-0 flex flex-col gap-8 justify-center items-center">
                     <div class="flex gap-4">
                         <Atom :colour="primary" />
                         <Atom :colour="secondary" />

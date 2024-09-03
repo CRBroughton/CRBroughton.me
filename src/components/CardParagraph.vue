@@ -13,7 +13,7 @@ const classes = computed(() => {
 </script>
 
 <template>
-    <p class="scroll-m-20 font-normal tracking-tight" :class="classes">
+    <p class="text-2xl font-bold text-gray-800" :class="classes">
         <slot />
     </p>
 </template>

@@ -24,6 +24,7 @@ const props = defineProps<{ theme: 'primary' | 'secondary' | 'warning' }>()
     cursor: pointer;
     transition: all ease 0.1s;
     top: 0;
+    width: 100%;
 
     &:hover {
         outline: 1px solid hsl(226, 75%, 70%);
@@ -68,17 +69,17 @@ const props = defineProps<{ theme: 'primary' | 'secondary' | 'warning' }>()
     }
 
     &.button-small {
-        font-size: 12px;
+        font-size: 16px;
         padding: 10px 16px;
     }
 
     &.button-medium {
-        font-size: 14px;
+        font-size: 18px;
         padding: 11px 20px;
     }
 
     &.button-large {
-        font-size: 16px;
+        font-size: 21px;
         padding: 12px 24px;
     }
 }
