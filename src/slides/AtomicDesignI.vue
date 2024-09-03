@@ -44,36 +44,8 @@ slides.value = [
         slideText: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
     },
     {
-        targets: '.heading-1',
-        opacity: 1,
-        slideHeading: "Tokens",
-        slideText: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-    },
-    {
-        targets: '.heading-2',
-        opacity: 1,
-        slideHeading: "Tokens",
-        slideText: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-    },
-    {
-        targets: '.heading-3',
-        opacity: 1,
-        slideHeading: "Colours",
-        slideText: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-    },
-    {
-        targets: '.atom-headings',
-        opacity: 0,
-        slideHeading: "Fonts",
-        slideText: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-    },
-    {
         targets: '.intro-atomic-design',
-        left: 450,
-        top: 200,
-        duration: 1000,
-        slideHeading: "Spacing",
-        slideText: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+        opacity: 0,
     },
     {
         targets: '.colour-atoms, .colour-bg-heading',
@@ -105,6 +77,48 @@ slides.value = [
         opacity: 1,
         duration: 600,
     },
+    {
+        targets: '.spacing-atoms, .spacing-bg-heading',
+        opacity: 0,
+        duration: 600,
+    }, 
+    {
+        targets: '.intro-atomic-design-2',
+        opacity: 1,
+        slideHeading: "Introduction",
+        slideText: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+    },
+    {
+        targets: '.intro-atomic-design-2',
+        left: 800,
+        top: 200,
+        duration: 1000,
+    },
+    {
+        targets: '.heading-1',
+        opacity: 1,
+        slideHeading: "Tokens",
+        slideText: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    },
+    {
+        targets: '.heading-2',
+        opacity: 1,
+        slideHeading: "Tokens",
+        slideText: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+    },
+    {
+        targets: '.heading-3',
+        opacity: 1,
+        slideHeading: "Colours",
+        slideText: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+    },
+    {
+        targets: '.heading-4',
+        opacity: 1,
+        slideHeading: "Colours",
+        slideText: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+    },
+
 ] satisfies anime.AnimeAnimParams[]
 </script>
 
@@ -154,16 +168,26 @@ slides.value = [
             <div
                 class="intro-atomic-design absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-0">
 
+                <Atom absolute class="left-[-150px] top-[-20px]" :colour="present_atom" />
+                <Heading size="slide-intro">
+                    Tokens
+                </Heading>
+            </div>
+
+            <div
+                class="intro-atomic-design-2 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-0">
+
                 <Atom absolute class="left-[-150px]" :colour="present_atom" />
                 <Heading size="slide-intro">
                     Tokens
                 </Heading>
                 <div class="atom-headings">
 
-                    <Heading class="heading-1 opacity-0" size="h2">The smallest possible atomic part</Heading>
-                    <Heading class="heading-2 opacity-0" size="h2">Tokens can be colours, spacing, fonts</Heading>
-                    <Heading class="heading-3 opacity-0" size="h2">Molecular structures (components) are built with
-                        Tokens
+                    <Heading class="heading-1 opacity-0" size="h1">Tokens store values</Heading>
+                    <Heading class="heading-2 opacity-0" size="h1">Can re-use tokens across the application</Heading>
+                    <Heading class="heading-3 opacity-0" size="h1">Tokens can be colour, typography, and spacing related
+                    </Heading>
+                    <Heading class="heading-4 opacity-0" size="h1">Tokens help create a common language between Design, Engineering and Marketing
                     </Heading>
                 </div>
             </div>
