@@ -23,6 +23,7 @@ type Slide = anime.AnimeAnimParams[] & {
     slideText?: string
     autoplay?: boolean
     hide?: boolean
+    initHide?: boolean
     customUpdate?: () => void
 }[]
 const props = defineProps<{ slides: Slide, duration?: number }>()
@@ -60,7 +61,15 @@ onMounted(() => {
         }))
 
     }
-
+    
+    // // Set initial hide if available on the slide info
+    for (let index = 0; index < states.length; index++) {
+        states[index].animatables.forEach(animatable => {
+           if (props.slides[index].initHide === true) {
+            animatable.target.classList.add('hidden')
+           }
+        });
+    }
     const { callSlide, revert, isRunning } = useSlides({
         states,
     })
