@@ -34,6 +34,10 @@ slides.value = [
         opacity: 1,
     },
     {
+        targets: '.intro-component',
+        opacity: 0,
+    },
+    {
         targets: '.intro-atomic-design',
         opacity: 1,
         slideHeading: "Introduction",
@@ -41,19 +45,19 @@ slides.value = [
     },
     {
         targets: '.heading-1',
-        opacity: 0,
+        opacity: 1,
         slideHeading: "Tokens",
         slideText: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
     },
     {
         targets: '.heading-2',
-        opacity: 0,
+        opacity: 1,
         slideHeading: "Tokens",
         slideText: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
     },
     {
         targets: '.heading-3',
-        opacity: 0,
+        opacity: 1,
         slideHeading: "Colours",
         slideText: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
     },
@@ -75,6 +79,7 @@ slides.value = [
         targets: '.colour-atoms, .colour-bg-heading',
         opacity: 1,
         initHide: true,
+        hide: true,
         duration: 600,
         easing: 'easeInOutCubic',
         slideHeading: "Introduction",
@@ -146,30 +151,27 @@ slides.value = [
             </div>
 
             <!-- The Atom -->
-
-
-
             <div
                 class="intro-atomic-design absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-0">
 
-                <!-- <Atom absolute class="left-[-150px]" :colour="present_atom" />
+                <Atom absolute class="left-[-150px]" :colour="present_atom" />
                 <Heading size="slide-intro">
-                    Atoms
+                    Tokens
                 </Heading>
                 <div class="atom-headings">
 
                     <Heading class="heading-1 opacity-0" size="h2">The smallest possible atomic part</Heading>
-                    <Heading class="heading-2 opacity-0" size="h2">Atoms can be colours, spacing, fonts</Heading>
+                    <Heading class="heading-2 opacity-0" size="h2">Tokens can be colours, spacing, fonts</Heading>
                     <Heading class="heading-3 opacity-0" size="h2">Molecular structures (components) are built with
-                        Atoms
+                        Tokens
                     </Heading>
-                </div> -->
+                </div>
             </div>
 
-            <div class=" colour-atoms w-full flex justify-center">
+            <div class="  w-full flex justify-center">
 
                 <div
-                    class=" absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-0 flex flex-col gap-8 justify-center items-center">
+                    class="colour-atoms absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-0 flex flex-col gap-8 justify-center items-center">
                     <div class="flex gap-4">
                         <Atom :colour="primary" />
                         <Atom :colour="secondary" />

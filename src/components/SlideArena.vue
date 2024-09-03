@@ -66,6 +66,7 @@ onMounted(() => {
     for (let index = 0; index < states.length; index++) {
         states[index].animatables.forEach(animatable => {
            if (props.slides[index].initHide === true) {
+            console.log('hello')
             animatable.target.classList.add('hidden')
            }
         });
