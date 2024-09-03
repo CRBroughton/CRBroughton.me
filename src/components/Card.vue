@@ -4,7 +4,7 @@
 
 <template>
     <div class="max-w-sm mx-auto bg-white rounded-xl shadow-lg overflow-hidden">
-        <div class="w-full h-64 object-cover">
+        <div class="w-full object-cover">
             <slot name="image" />
         </div>
         <div class="px-6 mt-6">
