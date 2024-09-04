@@ -3,6 +3,7 @@ import { ref } from "vue"
 
 export function useSlides(props: { states: anime.AnimeInstance[] }) {
     const currentPosition = ref(0)
+    const currentSlideID = ref('')
     const states = props.states
     const isRunning = ref(false)
 
@@ -51,6 +52,7 @@ export function useSlides(props: { states: anime.AnimeInstance[] }) {
                 // currentPosition.value = 0
             } else {
                 currentPosition.value++
+                currentSlideID.value = states[currentPosition.value].animatables[0].target.id
             }
             setTimeout(() => {
                 isRunning.value = false
@@ -65,6 +67,7 @@ export function useSlides(props: { states: anime.AnimeInstance[] }) {
         states,
         callSlide,
         revert,
-        isRunning
+        isRunning,
+        currentSlideID
     }
 }

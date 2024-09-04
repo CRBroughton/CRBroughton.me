@@ -24,10 +24,13 @@ type Slide = anime.AnimeAnimParams[] & {
     autoplay?: boolean
     hide?: boolean
     initHide?: boolean
+    addClasses?: string[]
     customUpdate?: () => void
 }[]
 const props = defineProps<{ slides: Slide, duration?: number }>()
-
+const emit = defineEmits<{
+    currentSlideID: [currentSlideID: string]
+}>()
 onMounted(() => {
     const states: anime.AnimeInstance[] = []
 
@@ -38,6 +41,25 @@ onMounted(() => {
             targets: document.querySelectorAll(String(props.slides[index].targets)),
             autoplay: props.slides[index].autoplay ? props.slides[index].autoplay : false,
             easing: props.slides[index].easing ?? 'easeInOutCubic',
+            changeBegin: function (anim) {
+                const classes = props.slides[index].addClasses
+                if (classes && direction === 'forwards') {
+                    anim.animatables.forEach((animatable) => {
+                        if (animatable.target.classList) {
+                            animatable.target.classList.add(...classes)
+                        }
+                    })
+                }
+
+                if (classes && direction === 'back') {
+                    anim.animatables.forEach((animatable) => {
+                        if (animatable.target.classList) {
+                            animatable.target.classList.remove(...classes)
+                        }
+                    })
+                }
+            },
+
             // changeBegin: function (anim) {
             //     anim.animatables.forEach((animatable) => {
             //         if (animatable.target.style.opacity === '0' && direction === 'back') {
@@ -66,12 +88,11 @@ onMounted(() => {
     for (let index = 0; index < states.length; index++) {
         states[index].animatables.forEach(animatable => {
            if (props.slides[index].initHide === true) {
-            console.log('hello')
             animatable.target.classList.add('hidden')
            }
         });
     }
-    const { callSlide, revert, isRunning } = useSlides({
+    const { callSlide, revert, isRunning, currentSlideID } = useSlides({
         states,
     })
     forward = callSlide
@@ -79,6 +100,10 @@ onMounted(() => {
 
     watch(() => isRunning.value, () => {
         running.value = isRunning.value
+    })
+
+    watch(() => currentSlideID.value, () => {
+        emit('currentSlideID', currentSlideID.value)
     })
 
 

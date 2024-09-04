@@ -1,12 +1,15 @@
 <script setup lang="ts">
 import { ref, computed } from 'vue';
 
-const props = defineProps<{ theme: 'primary' | 'secondary' | 'warning' }>()
+const props = defineProps<{ 
+    theme?: 'primary' | 'secondary' | 'warning'
+    size?: 'small' | 'medium' | 'large'
+}>()
 
 </script>
 
 <template>
-    <button class="my-button button-small" :class="props.theme">
+    <button class="my-button" :class="[props.theme, props.size]">
         <slot />
     </button>
 </template>
@@ -14,9 +17,7 @@ const props = defineProps<{ theme: 'primary' | 'secondary' | 'warning' }>()
 <style scoped lang="scss">
 .my-button {
     border: none;
-    background: hsl(246, 84%, 58%);
-    border: 1px solid hsl(246, 84%, 58%);
-    box-shadow: 1px 1px 2px hsl(246, 80%, 70%);
+    background: white;
     color: white;
     text-decoration: none;
     border-radius: 28px;
@@ -24,7 +25,6 @@ const props = defineProps<{ theme: 'primary' | 'secondary' | 'warning' }>()
     cursor: pointer;
     transition: all ease 0.1s;
     top: 0;
-    width: 100%;
 
     &:hover {
         outline: 1px solid hsl(226, 75%, 70%);
@@ -37,6 +37,12 @@ const props = defineProps<{ theme: 'primary' | 'secondary' | 'warning' }>()
         top: 1px;
         background: hsl(246, 84%, 62%);
         outline: 1px solid hsl(226, 82%, 69%);
+    }
+
+    &.primary {
+        background: hsl(246, 84%, 58%);
+        border: 1px solid hsl(246, 84%, 58%);
+        box-shadow: 1px 1px 2px hsl(246, 80%, 70%);
     }
 
     &.secondary {
@@ -68,17 +74,17 @@ const props = defineProps<{ theme: 'primary' | 'secondary' | 'warning' }>()
         }
     }
 
-    &.button-small {
+    &.small {
         font-size: 16px;
         padding: 10px 16px;
     }
 
-    &.button-medium {
+    &.medium {
         font-size: 18px;
         padding: 11px 20px;
     }
 
-    &.button-large {
+    &.large {
         font-size: 21px;
         padding: 12px 24px;
     }
