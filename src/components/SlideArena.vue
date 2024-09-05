@@ -29,7 +29,7 @@ type Slide = anime.AnimeAnimParams[] & {
 }[]
 const props = defineProps<{ slides: Slide, duration?: number }>()
 const emit = defineEmits<{
-    currentSlideID: [currentSlideID: string]
+    currentSlide: [currentSlideID: string]
 }>()
 onMounted(() => {
     const states: anime.AnimeInstance[] = []
@@ -42,22 +42,40 @@ onMounted(() => {
             autoplay: props.slides[index].autoplay ? props.slides[index].autoplay : false,
             easing: props.slides[index].easing ?? 'easeInOutCubic',
             changeBegin: function (anim) {
-                const classes = props.slides[index].addClasses
-                if (classes && direction === 'forwards') {
+                const addClasses = props.slides[index].addClasses
+                if (addClasses && direction === 'forwards') {
                     anim.animatables.forEach((animatable) => {
                         if (animatable.target.classList) {
-                            animatable.target.classList.add(...classes)
+                            animatable.target.classList.add(...addClasses)
                         }
                     })
                 }
 
-                if (classes && direction === 'back') {
+                if (addClasses && direction === 'back') {
                     anim.animatables.forEach((animatable) => {
                         if (animatable.target.classList) {
-                            animatable.target.classList.remove(...classes)
+                            animatable.target.classList.remove(...addClasses)
                         }
                     })
                 }
+
+                const removeClasses = props.slides[index].removeClasses
+                if (removeClasses && direction === 'forwards') {
+                    anim.animatables.forEach((animatable) => {
+                        if (animatable.target.classList) {
+                            animatable.target.classList.remove(...removeClasses)
+                        }
+                    })
+                }
+
+                if (removeClasses && direction === 'back') {
+                    anim.animatables.forEach((animatable) => {
+                        if (animatable.target.classList) {
+                            animatable.target.classList.add(...removeClasses)
+                        }
+                    })
+                }
+
             },
 
             // changeBegin: function (anim) {
@@ -103,7 +121,7 @@ onMounted(() => {
     })
 
     watch(() => currentSlideID.value, () => {
-        emit('currentSlideID', currentSlideID.value)
+        emit('currentSlide', currentSlideID.value)
     })
 
 

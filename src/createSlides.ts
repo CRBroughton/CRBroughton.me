@@ -52,7 +52,7 @@ export function useSlides(props: { states: anime.AnimeInstance[] }) {
                 // currentPosition.value = 0
             } else {
                 currentPosition.value++
-                currentSlideID.value = states[currentPosition.value].animatables[0].target.id
+                currentSlideID.value = states[currentPosition.value - 1].animatables[0].target.id
             }
             setTimeout(() => {
                 isRunning.value = false

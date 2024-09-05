@@ -266,13 +266,33 @@ slides.value = [
     {
         targets: '.final-card-slide',
         opacity: 1,
+    },
+    {
+        targets: '.final-card-slide-image',
+        opacity: 1
+    },
+    {
+        targets: '.final-card-slide-title',
+        opacity: 1,
+    },
+    {
+        targets: '.final-card-slide-paragraph',
+        opacity: 1,
+    },
+    {
+        targets: '.final-card-slide-buy-button',
+        opacity: 1,
+    },
+    {
+        targets: '.final-card-slide-details-button',
+        opacity: 1,
     }
 
 ] satisfies anime.AnimeAnimParams[]
 </script>
 
 <template>
-    <SlideArena :slides :duration="120" @current-slide-id="console.log($event)">
+    <SlideArena :slides :duration="120" @current-slide="console.log($event)">
         <div class="w-screen h-screen absolute overflow-hidden flex bg-black text-white">
 
             <!-- Stars -->
@@ -479,20 +499,20 @@ slides.value = [
             <div class="final-card-slide absolute top-1/2 left-1/2 opacity-0"
                 style="transform: translate(-50%, -50%);">
                 <Card>
-                    <!-- <template #image>
-                        <Image v-if="finalCard.image" src="https://www.giftpro.co.uk/wp-content/uploads/2021/06/Tillo-Header.jpg" />
+                    <template #image>
+                        <Image src="https://www.giftpro.co.uk/wp-content/uploads/2021/06/Tillo-Header.jpg" class="final-card-slide-image opacity-0" />
                     </template>
                     <template #title>
-                        <CardParagraph v-if="finalCard.title" theme="dark">A Tillo gift card
+                        <CardParagraph theme="dark" class="final-card-slide-title opacity-0">A Tillo gift card
                         </CardParagraph>
                     </template>
                     <template #subtitle>
-                        <p v-if="finalCard.subtitle">Surprise and delight your family or friends</p>
+                        <p class="final-card-slide-paragraph opacity-0">Surprise and delight your family or friends</p>
                     </template>
                     <template #buttons>
-                        <Button v-if="finalCard.buttons" size="small" class="w-full" theme="primary">Buy</Button>
-                        <Button v-if="finalCard.buttons" size="small" class="w-full" theme="secondary">Details</Button>
-                    </template> -->
+                        <Button size="small" class="final-card-slide-buy-button w-full  opacity-0" theme="primary">Buy</Button>
+                        <Button size="small" class="final-card-slide-details-button w-full  opacity-0" theme="secondary">Details</Button>
+                    </template>
                 </Card>
             </div>
         </div>
