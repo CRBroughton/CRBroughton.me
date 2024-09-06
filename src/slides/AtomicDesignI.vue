@@ -64,30 +64,33 @@ slides.value = [
         opacity: 1,
     },
     {
+        targets: '.blue-atom',
+        backgroundColor: "hsl(192, 73%, 70%)",
+    },
+    {
+        targets: '.green-atom',
+        backgroundColor: "hsl(142, 69%, 78%)",
+    },
+    {
+        targets: '.red-atom',
+        backgroundColor: "hsl(0, 64%, 90%)",
+    },
+    {
+        targets: '.blue-atom',
+        backgroundColor: "hsl(242, 74%, 61%)",
+    },
+    {
+        targets: '.green-atom',
+        backgroundColor: "hsl(148, 67%, 54%)",
+    },
+    {
+        targets: '.red-atom',
+        backgroundColor: "hsl(0, 61%, 52%)",
+    },
+    {
         targets: '.bold-atoms',
         opacity: 0,
         hide: true,
-    },
-    {
-        targets: '.pastel-atoms',
-        opacity: 1,
-        initHide: true,
-        hide: true,
-    },
-    {
-        targets: '.pastel-atoms',
-        opacity: 0,
-        hide: true,
-    },
-    {
-        targets: '.tillo-atoms',
-        opacity: 1,
-        initHide: true,
-        hide: true,
-    },
-    {
-        targets: '.tillo-atoms',
-        opacity: 0,
     },
     {
         targets: '.colour-atoms, .colour-bg-heading',
@@ -123,12 +126,6 @@ slides.value = [
         opacity: 1,
         slideHeading: "Introduction",
         slideText: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-    },
-    {
-        targets: '.intro-atomic-design-2',
-        left: 800,
-        top: 200,
-        duration: 1000,
     },
     {
         targets: '.heading-1',
@@ -336,28 +333,28 @@ slides.value = [
                 class="intro-atomic-design absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-0">
 
                 <Atom absolute class="left-[-150px] top-[-20px]" :colour="present_atom" />
-                <Heading size="slide-intro">
+                <Heading class="pb-4" size="slide-intro">
                     Tokens
                 </Heading>
             </div>
 
             <div
-                class="intro-atomic-design-2 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-0">
+                class="intro-atomic-design-2 absolute transform -translate-x-1/2 -translate-y-1/2 opacity-0 left-[800px] top-[200px]">
 
                 <Atom absolute class="left-[-150px]" :colour="present_atom" />
-                <Heading size="slide-intro">
+                <Heading class="pb-4" size="slide-intro">
                     Tokens
                 </Heading>
                 <div class="atom-headings">
 
-                    <Heading class="heading-1 opacity-0" size="slide-subheading">Tokens store values</Heading>
-                    <Heading class="heading-2 opacity-0" size="slide-subheading">Can re-use tokens across the
+                    <Heading class="heading-1 opacity-0 pl-4" size="slide-subheading">Tokens store values</Heading>
+                    <Heading class="heading-2 opacity-0 pl-4" size="slide-subheading">Can re-use tokens across the
                         application</Heading>
-                    <Heading class="heading-3 opacity-0" size="slide-subheading">Tokens can be colour, typography, and
+                    <Heading class="heading-3 opacity-0 pl-4" size="slide-subheading">Tokens can be colour, typography, and
                         spacing
                         related
                     </Heading>
-                    <Heading class="heading-4 opacity-0" size="slide-subheading">Tokens help create a common language
+                    <Heading class="heading-4 opacity-0 pl-4" size="slide-subheading">Tokens help create a common language
                         between
                         Design, Engineering and Marketing
                     </Heading>
@@ -368,19 +365,9 @@ slides.value = [
             <div
                 class="colour-atoms absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-0 flex flex-col gap-8 justify-center items-center">
                 <div class="bold-atoms flex gap-4 opacity-0">
-                    <Atom :colour="bold_blue" />
-                    <Atom :colour="bold_green" />
-                    <Atom :colour="bold_red" />
-                </div>
-                <div class="pastel-atoms flex gap-4 opacity-0">
-                    <Atom :colour="pastel_blue" />
-                    <Atom :colour="pastel_green" />
-                    <Atom :colour="pastel_red" />
-                </div>
-                <div class="tillo-atoms flex gap-4 opacity-0">
-                    <Atom :colour="tillo_lapis" />
-                    <Atom :colour="tillo_emerald" />
-                    <Atom :colour="tillo_red" />
+                    <Atom name="blue-atom" :colour="bold_blue" />
+                    <Atom name="green-atom" :colour="bold_green" />
+                    <Atom name="red-atom" :colour="bold_red" />
                 </div>
                 <h1
                     class="colour-bg-heading absolute font-extrabold uppercase text-opacity-10 text-[500px] text-slate-700 opacity-0 outline-2 drop-shadow-[3.1px_1px_rgba(0,0,0,0.3)]">
@@ -427,17 +414,13 @@ slides.value = [
             <div class="components-introduction absolute top-1/2 left-1/2 opacity-0"
                 style="transform: translate(-50%, -50%);">
 
-                <Heading size="slide-intro">
+                <Heading class="pb-4" size="slide-intro">
                     Components
                 </Heading>
                 <div class="component-headings">
-                    <Heading class="component-heading-1 opacity-0" size="slide-subheading">Tokens store values</Heading>
-                    <Heading class="component-heading-2 opacity-0" size="slide-subheading">Can re-use tokens across the
-                        application</Heading>
-                    <Heading class="component-heading-3 opacity-0" size="slide-subheading">Tokens can be colour,
-                        typography, and
-                        spacing
-                        related
+                    <Heading class="component-heading-1 opacity-0 pl-4" size="slide-subheading">A single unit of code</Heading>
+                    <Heading class="component-heading-2 opacity-0 pl-4" size="slide-subheading">Ideally has a single responsibility</Heading>
+                    <Heading class="component-heading-3 opacity-0 pl-4" size="slide-subheading">Can be simple (Button) or complex (DatePicker)
                     </Heading>
                 </div>
             </div>
