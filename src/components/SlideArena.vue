@@ -25,6 +25,7 @@ type Slide = anime.AnimeAnimParams[] & {
     hide?: boolean
     initHide?: boolean
     addClasses?: string[]
+    removeClasses?: string[]
     customUpdate?: () => void
 }[]
 const props = defineProps<{ slides: Slide, duration?: number }>()

@@ -24,6 +24,7 @@ const props = defineProps<{
     position: relative;
     cursor: pointer;
     transition: all ease 0.1s;
+    padding: 1px;
     top: 0;
 
     &:hover {

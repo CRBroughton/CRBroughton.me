@@ -18,8 +18,8 @@ slides.value = [
         targets: '.cosmic-voyage-introduction',
         // scale: { value: 1, duration: 1000 },
         // opacity: { value: 1, delay: 2000, duration: 1000 },
-        scale: { value: 1, duration: 8000 },
-        opacity: { value: 1, delay: 2000, duration: 4000 },
+        // scale: { value: 1, duration: 8000 },
+        // opacity: { value: 1, delay: 2000, duration: 4000 },
         easing: 'easeInOutQuad',
     },
     {
@@ -146,12 +146,6 @@ slides.value = [
         slideText: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
     },
     {
-        targets: '.heading-4',
-        opacity: 1,
-        slideHeading: "Colours",
-        slideText: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-    },
-    {
         targets: '.intro-atomic-design-2',
         opacity: 0,
     },
@@ -163,12 +157,10 @@ slides.value = [
     },
     {
         targets: '.components-introduction',
-        left: 640,
-        top: 180,
-        duration: 1000,
+        opacity: 0
     },
     {
-        targets: '.component-heading-1',
+        targets: '.component-headings, .component-heading-1',
         opacity: 1,
     },
     {
@@ -176,12 +168,8 @@ slides.value = [
         opacity: 1,
     },
     {
-        targets: '.component-heading-3',
-        opacity: 1,
-    },
-    {
         targets: [
-            '.components-introduction',
+            '.component-headings',
             '.components-heading-1',
             '.components-heading-2',
             '.components-heading-3',
@@ -196,7 +184,7 @@ slides.value = [
         targets: [
             '.blue-empty-button',
             '.green-empty-button',
-            '.red-empty-buttofoon'
+            '.red-empty-button'
         ],
     },
     {
@@ -265,8 +253,23 @@ slides.value = [
         opacity: 1,
     },
     {
+        targets: '.final-card-slide-image-slot, .final-card-slide-title-slot, .final-card-slide-paragraph-slot, .final-card-slide-button-slot',
+        keyframes: [
+            {opacity: 1},
+            {opacity: 0},
+
+        ],
+        duration: 2000,
+    },
+    {
         targets: '.final-card-slide-image',
-        opacity: 1
+        top: 0,
+    },
+    {
+        targets: '.final-card-slide-image',
+        opacity: 1,
+        top: 0,
+        duration: 500
     },
     {
         targets: '.final-card-slide-title',
@@ -322,8 +325,10 @@ slides.value = [
                         <p>Surprise and delight your family or friends</p>
                     </template>
                     <template #buttons>
-                        <Button size="small" class="w-full" theme="primary">Buy</Button>
-                        <Button size="small" class="w-full" theme="secondary">Details</Button>
+                        <div class="flex w-full gap-2 px-4">
+                            <Button size="small" class="w-full" theme="primary">Buy</Button>
+                            <Button size="small" class="w-full" theme="secondary">Details</Button>
+                        </div>
                     </template>
                 </Card>
             </div>
@@ -332,31 +337,17 @@ slides.value = [
             <div
                 class="intro-atomic-design absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-0">
 
-                <Atom absolute class="left-[-150px] top-[-20px]" :colour="present_atom" />
-                <Heading class="pb-4" size="slide-intro">
+                <Heading class="pb-4" size="slide-intro" style="scale: 2">
                     Tokens
                 </Heading>
             </div>
 
             <div
-                class="intro-atomic-design-2 absolute transform -translate-x-1/2 -translate-y-1/2 opacity-0 left-[800px] top-[200px]">
-
-                <Atom absolute class="left-[-150px]" :colour="present_atom" />
-                <Heading class="pb-4" size="slide-intro">
-                    Tokens
-                </Heading>
-                <div class="atom-headings">
-
-                    <Heading class="heading-1 opacity-0 pl-4" size="slide-subheading">Tokens store values</Heading>
-                    <Heading class="heading-2 opacity-0 pl-4" size="slide-subheading">Can re-use tokens across the
-                        application</Heading>
-                    <Heading class="heading-3 opacity-0 pl-4" size="slide-subheading">Tokens can be colour, typography, and
-                        spacing
-                        related
-                    </Heading>
-                    <Heading class="heading-4 opacity-0 pl-4" size="slide-subheading">Tokens help create a common language
-                        between
-                        Design, Engineering and Marketing
+                class="intro-atomic-design-2 absolute transform -translate-x-1/2 -translate-y-1/2 opacity-0 top-1/2 left-1/2" style="transform: translate(-50%, -50%); ">
+                <div class="atom-headings flex gap-2" style="scale: 2;">
+                    <Heading class="heading-1 opacity-0 pl-4 w-fit" size="h1">Values</Heading>
+                    <Heading class="heading-2 opacity-0 pl-4 w-fit" size="h1">Reusable</Heading>
+                    <Heading class="heading-3 opacity-0 pl-4 w-fit" size="h1">Common Language
                     </Heading>
                 </div>
             </div>
@@ -389,7 +380,7 @@ slides.value = [
 
             <div
                 class="spacing-atoms absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-0 flex flex-col gap-8 justify-center items-center">
-                <div class="type-atoms-foxes flex flex-col justify-center items-center gap-4">
+                <div class="type-atoms-foxes flex flex-col justify-center items-center gap-4" style="scale: 2">
                     <div class="flex justify-center items-center w-14 h-14 rounded-lg
                         bg-stripes-white
                         ">
@@ -414,21 +405,24 @@ slides.value = [
             <div class="components-introduction absolute top-1/2 left-1/2 opacity-0"
                 style="transform: translate(-50%, -50%);">
 
-                <Heading class="pb-4" size="slide-intro">
+                <Heading class="pb-4" size="slide-intro" style="scale: 2;">
                     Components
                 </Heading>
-                <div class="component-headings">
-                    <Heading class="component-heading-1 opacity-0 pl-4" size="slide-subheading">A single unit of code</Heading>
-                    <Heading class="component-heading-2 opacity-0 pl-4" size="slide-subheading">Ideally has a single responsibility</Heading>
-                    <Heading class="component-heading-3 opacity-0 pl-4" size="slide-subheading">Can be simple (Button) or complex (DatePicker)
-                    </Heading>
+            </div>
+
+            <div class="component-headings absolute top-1/2 left-1/2 opacity-0 w-fit whitespace-nowrap flex gap-10 "
+                 style="transform: translate(-50%, -50%);"
+            >
+                <div style="display: flex; scale: 2">
+                    <Heading class="component-heading-1 opacity-0 pl-4" size="h1">Singular</Heading>
+                    <Heading class="component-heading-2 opacity-0 pl-4" size="h1">Simplicity</Heading>
                 </div>
             </div>
 
 
             <div class="components-empty-button absolute top-1/2 left-1/2 opacity-0"
                 style="transform: translate(-50%, -50%);">
-                <div class="flex gap-4 w-full">
+                <div class="flex gap-4 w-full" style="scale: 3">
                     <Button class="blue-empty-button">Blue</Button>
                     <Button class="green-empty-button">Green</Button>
                     <Button class="red-empty-button">Red</Button>
@@ -452,49 +446,47 @@ slides.value = [
 
             <div class="components-overview absolute top-1/2 left-1/2 opacity-0"
                 style="transform: translate(-50%, -50%);">
-
-                <Heading class="pb-4" size="slide-intro">
-                    Components
-                </Heading>
-                <div class="component-headings">
-                    <Heading class="pl-4" size="slide-subheading">We build components to avoid code duplication</Heading>
-                    <Heading class="pl-4" size="slide-subheading">Components can be 'composed' together, just like Lego to help create more complex components</Heading>
-                    <Heading class="pl-4" size="slide-subheading">
-                        Small components are easier to reuse in various
-                        scenarios and are easier to design and write
+                <div class="component-headings flex">
+                    <Heading class="pl-4" size="h1">Duplication</Heading>
+                    <Heading class="pl-4" size="h1">Composition</Heading>
+                    <Heading class="pl-4" size="h1">
+                        Design
                     </Heading>
-                    <Heading class="pl-4" size="slide-subheading">
-                        Our components are easy to change in the future
-                    </Heading>
-                    <Heading class="pl-4" size="slide-subheading">
-                       Small components are easier to test
-                    </Heading>
-                    <Heading class="pl-4" size="slide-subheading">
-                       Composing components together avoids 'God components';
-                       components that are responsible for too many things
+                    <Heading class="pl-4" size="h1">
+                       Change
                     </Heading>
                 </div>
             </div>
 
-
-
-
             <div class="final-card-slide absolute top-1/2 left-1/2 opacity-0"
                 style="transform: translate(-50%, -50%);">
-                <Card>
+                <Card class="h-[461px] w-[384px] relative">
                     <template #image>
-                        <Image src="https://www.giftpro.co.uk/wp-content/uploads/2021/06/Tillo-Header.jpg" class="final-card-slide-image opacity-0" />
+                        <div class="final-card-slide-image-slot opacity-0 absolute top-0 w-full h-[234px]" :class="[tillo_lapis]">
+                        </div>
+                        <Image class="final-card-slide-image opacity-0 top-[-100px] absolute" src="https://www.giftpro.co.uk/wp-content/uploads/2021/06/Tillo-Header.jpg" />
                     </template>
                     <template #title>
-                        <CardParagraph theme="dark" class="final-card-slide-title opacity-0">A Tillo gift card
+                        <div class="final-card-slide-title-slot h-[32px] left-0 w-full opacity-0 absolute top-[285px]" :class="[tillo_lapis]">
+                            <CardParagraph theme="dark" class="final-card-slide-title absolute top-[285px] opacity-0">A Tillo gift card
+                            </CardParagraph>
+                        </div>
+                        <CardParagraph theme="dark" class="final-card-slide-title absolute top-[285px] opacity-0">A Tillo gift card
                         </CardParagraph>
                     </template>
                     <template #subtitle>
-                        <p class="final-card-slide-paragraph opacity-0">Surprise and delight your family or friends</p>
+                        <div class="final-card-slide-paragraph-slot opacity-0 absolute top-[325px] h-[24px] w-full left-0" :class="[tillo_lapis]">
+                        </div>
+                        <p class="final-card-slide-paragraph opacity-0 absolute top-[325px]">Surprise and delight your family or friends</p>
                     </template>
                     <template #buttons>
-                        <Button size="small" class="final-card-slide-buy-button w-full  opacity-0" theme="primary">Buy</Button>
-                        <Button size="small" class="final-card-slide-details-button w-full  opacity-0" theme="secondary">Details</Button>
+                        <div class="final-card-slide-button-slot opacity-0 flex w-full gap-2 absolute bottom-6 h-[45px] left-0" :class="[tillo_lapis]">
+                        </div>
+                        <div class="flex gap-2 absolute bottom-0 w-full left-0 pb-6 px-4"
+                        >
+                            <Button size="small" class="final-card-slide-buy-button w-full opacity-0" theme="primary">Buy</Button>
+                            <Button size="small" class="final-card-slide-details-button w-full opacity-0" theme="secondary">Details</Button>
+                        </div>
                     </template>
                 </Card>
             </div>

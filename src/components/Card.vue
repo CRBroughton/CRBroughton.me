@@ -13,7 +13,7 @@
         <div class="px-6 mt-2 mb-12 text-gray-600">
             <slot name="subtitle"/>
         </div>
-        <div class="mt-auto mx-6 mb-6 flex space-x-2 rounded-b-xl">
+        <div class="mt-auto mb-6 flex rounded-b-xl">
             <slot name="buttons" />
         </div>
     </div>
