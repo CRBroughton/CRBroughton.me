@@ -40,8 +40,9 @@ slides.value = [
         opacity: 0,
     },
     {
-        targets: '.intro-atomic-design',
+        targets: '.intro-atomic-design-heading',
         opacity: 1,
+        width: "100%",
         slideHeading: "Introduction",
         slideText: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
     },
@@ -150,10 +151,9 @@ slides.value = [
         opacity: 0,
     },
     {
-        targets: '.components-introduction',
+        targets: '.components-introduction-heading',
         opacity: 1,
-        initHide: true,
-        hide: true,
+        width: '100%',
     },
     {
         targets: '.components-introduction',
@@ -279,7 +279,6 @@ slides.value = [
     {
         targets: '.final-card-slide-paragraph',
         opacity: 1,
-        width: '100%',
     },
     {
         targets: '.final-card-slide-button-slot-content',
@@ -342,9 +341,8 @@ slides.value = [
 
             <!-- The Atom/Tokens -->
             <div
-                class="intro-atomic-design absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-0">
-
-                <Heading class="pb-4" size="slide-intro" style="scale: 2">
+                class="intro-atomic-design absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                <Heading class="intro-atomic-design-heading pb-4 w-[0px] overflow-clip" size="slide-intro" style="scale: 2">
                     Tokens
                 </Heading>
             </div>
@@ -409,10 +407,10 @@ slides.value = [
                     Spacing</h1>
             </div>
 
-            <div class="components-introduction absolute top-1/2 left-1/2 opacity-0"
+            <div class="components-introduction absolute top-1/2 left-1/2"
                 style="transform: translate(-50%, -50%);">
 
-                <Heading class="pb-4" size="slide-intro" style="scale: 2;">
+                <Heading class="components-introduction-heading pb-4 w-[0px] overflow-clip" size="slide-intro" style="scale: 2;">
                     Components
                 </Heading>
             </div>
@@ -482,7 +480,7 @@ slides.value = [
                     <template #subtitle>
                         <div class="final-card-slide-paragraph-slot opacity-0 absolute top-[325px] h-[24px] w-full left-0" :class="[tillo_lapis]">
                         </div>
-                        <p class="final-card-slide-paragraph opacity-0 absolute top-[325px] w-[0px] overflow-clip">Surprise and delight your family or friends</p>
+                        <p class="final-card-slide-paragraph opacity-0 absolute top-[325px]">Surprise and delight your family or friends</p>
                     </template>
                     <template #buttons>
                         <div class="final-card-slide-button-slot opacity-0 flex w-full gap-2 absolute bottom-6 h-[45px] left-0" :class="[tillo_lapis]">
