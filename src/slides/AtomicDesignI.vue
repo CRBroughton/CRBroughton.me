@@ -274,10 +274,17 @@ slides.value = [
     {
         targets: '.final-card-slide-title',
         opacity: 1,
+        width: '100%',
     },
     {
         targets: '.final-card-slide-paragraph',
         opacity: 1,
+        width: '100%',
+    },
+    {
+        targets: '.final-card-slide-button-slot-content',
+        opacity: 1,
+        width: '100%',
     },
     {
         targets: '.final-card-slide-buy-button',
@@ -468,8 +475,6 @@ slides.value = [
                     </template>
                     <template #title>
                         <div class="final-card-slide-title-slot h-[32px] left-0 w-full opacity-0 absolute top-[285px]" :class="[tillo_lapis]">
-                            <CardParagraph theme="dark" class="final-card-slide-title absolute top-[285px] opacity-0">A Tillo gift card
-                            </CardParagraph>
                         </div>
                         <CardParagraph theme="dark" class="final-card-slide-title absolute top-[285px] opacity-0">A Tillo gift card
                         </CardParagraph>
@@ -477,15 +482,15 @@ slides.value = [
                     <template #subtitle>
                         <div class="final-card-slide-paragraph-slot opacity-0 absolute top-[325px] h-[24px] w-full left-0" :class="[tillo_lapis]">
                         </div>
-                        <p class="final-card-slide-paragraph opacity-0 absolute top-[325px]">Surprise and delight your family or friends</p>
+                        <p class="final-card-slide-paragraph opacity-0 absolute top-[325px] w-[0px] overflow-clip">Surprise and delight your family or friends</p>
                     </template>
                     <template #buttons>
                         <div class="final-card-slide-button-slot opacity-0 flex w-full gap-2 absolute bottom-6 h-[45px] left-0" :class="[tillo_lapis]">
                         </div>
-                        <div class="flex gap-2 absolute bottom-0 w-full left-0 pb-6 px-4"
+                        <div class="final-card-slide-button-slot-content flex gap-2 absolute bottom-0 w-[0px] h-[48px] opacity-0 left-0 mb-6 px-4"
                         >
-                            <Button size="small" class="final-card-slide-buy-button w-full opacity-0" theme="primary">Buy</Button>
-                            <Button size="small" class="final-card-slide-details-button w-full opacity-0" theme="secondary">Details</Button>
+                            <Button size="small" class="final-card-slide-buy-button w-full opacity-1" theme="primary">Buy</Button>
+                            <Button size="small" class="final-card-slide-details-button w-full opacity-1" theme="secondary">Details</Button>
                         </div>
                     </template>
                 </Card>
