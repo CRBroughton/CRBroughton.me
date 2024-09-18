@@ -16,10 +16,10 @@ const slides = ref<anime.AnimeAnimParams[]>([])
 slides.value = [
     {
         targets: '.cosmic-voyage-introduction',
-        scale: { value: 1, duration: 1000 },
-        opacity: { value: 1, delay: 2000, duration: 1000 },
-        // scale: { value: 1, duration: 8000 },
-        // opacity: { value: 1, delay: 2000, duration: 4000 },
+        // scale: { value: 1, duration: 1000 },
+        // opacity: { value: 1, delay: 2000, duration: 1000 },
+        scale: { value: 1, duration: 8000 },
+        opacity: { value: 1, delay: 2000, duration: 4000 },
         easing: 'easeInOutQuad',
     },
     {
