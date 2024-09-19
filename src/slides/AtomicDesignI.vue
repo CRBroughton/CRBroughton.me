@@ -44,7 +44,8 @@ slides.value = [
         opacity: 1,
         width: "100%",
         slideHeading: "Introduction",
-        slideText: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+        slideText: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+        duration: 800
     },
     {
         targets: '.intro-atomic-design',
@@ -66,27 +67,33 @@ slides.value = [
     },
     {
         targets: '.blue-atom',
-        backgroundColor: "hsl(192, 73%, 70%)",
+        keyframes: [
+            {backgroundColor: "hsl(192, 73%, 70%)"},
+            {backgroundColor: "hsl(242, 74%, 61%)"},
+            {backgroundColor: "#00b1ff"}
+        ],
+        loop: true,
+        duration: 2000,
     },
     {
         targets: '.green-atom',
-        backgroundColor: "hsl(142, 69%, 78%)",
+        keyframes: [
+            {backgroundColor: "hsl(142, 69%, 78%)"},
+            {backgroundColor: "hsl(148, 67%, 54%)"},
+            {backgroundColor: "#00ff09"}
+        ],
+        loop: true,
+        duration: 2000,
     },
     {
         targets: '.red-atom',
-        backgroundColor: "hsl(0, 64%, 90%)",
-    },
-    {
-        targets: '.blue-atom',
-        backgroundColor: "hsl(242, 74%, 61%)",
-    },
-    {
-        targets: '.green-atom',
-        backgroundColor: "hsl(148, 67%, 54%)",
-    },
-    {
-        targets: '.red-atom',
-        backgroundColor: "hsl(0, 61%, 52%)",
+        keyframes: [
+            {backgroundColor: "hsl(0, 64%, 90%)"},
+            {backgroundColor: "hsl(0, 61%, 52%)"},
+            {backgroundColor: "#ff0000"}
+        ],
+        loop: true,
+        duration: 2000,
     },
     {
         targets: '.bold-atoms',
@@ -118,10 +125,42 @@ slides.value = [
         duration: 600,
     },
     {
+        targets: '.spacing-atoms-atom',
+        keyframes: [
+            {
+                width: '160px',
+                height: '160px'
+            },
+            {
+                width: '170px',
+                height: '170px'
+            },
+            {
+                width: '200px',
+                height: '200px'
+            },
+            {
+                width: '220px',
+                height: '220px'   
+            },
+            {
+                width: '200px',
+                height: '200px'
+            },
+            {
+                width: '160px',
+                height: '160px'
+            }
+        ],
+        loop: true,
+        duration: 4000,
+    },
+    {
         targets: '.spacing-atoms, .spacing-bg-heading',
         opacity: 0,
         duration: 600,
     },
+
     {
         targets: '.intro-atomic-design-2',
         opacity: 1,
@@ -154,6 +193,7 @@ slides.value = [
         targets: '.components-introduction-heading',
         opacity: 1,
         width: '100%',
+        duration: 1000,
     },
     {
         targets: '.components-introduction',
@@ -361,9 +401,9 @@ slides.value = [
             <div
                 class="colour-atoms absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-0 flex flex-col gap-8 justify-center items-center">
                 <div class="bold-atoms flex gap-4 opacity-0">
-                    <Atom name="blue-atom" :colour="bold_blue" />
-                    <Atom name="green-atom" :colour="bold_green" />
-                    <Atom name="red-atom" :colour="bold_red" />
+                    <Atom style="scale: 2" name="blue-atom" :colour="bold_blue" />
+                    <Atom style="scale: 2" name="green-atom" :colour="bold_green" />
+                    <Atom style="scale: 2" name="red-atom" :colour="bold_red" />
                 </div>
                 <h1
                     class="colour-bg-heading absolute font-extrabold uppercase text-opacity-10 text-[500px] text-slate-700 opacity-0 outline-2 drop-shadow-[3.1px_1px_rgba(0,0,0,0.3)]">
@@ -386,20 +426,10 @@ slides.value = [
             <div
                 class="spacing-atoms absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-0 flex flex-col gap-8 justify-center items-center">
                 <div class="type-atoms-foxes flex flex-col justify-center items-center gap-4" style="scale: 2">
-                    <div class="flex justify-center items-center w-14 h-14 rounded-lg
+                    <div class="spacing-atoms-atom flex justify-center items-center w-[160px] h-[160px] rounded-lg
                         bg-stripes-white
                         ">
-                        <div class="w-10 h-10 bg-slate-500 rounded-lg"></div>
-                    </div>
-                    <div class="flex justify-center items-center w-16 h-16 rounded-lg
-                        bg-stripes-white
-                        ">
-                        <div class="w-10 h-10 bg-slate-500 rounded-lg"></div>
-                    </div>
-                    <div class="flex justify-center items-center w-20 h-20 rounded-lg
-                        bg-stripes-white
-                        ">
-                        <div class="w-10 h-10 bg-slate-500 rounded-lg"></div>
+                        <div class="w-40 h-40 bg-slate-500 rounded-lg"></div>
                     </div>
                 </div>
                 <h1
