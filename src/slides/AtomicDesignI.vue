@@ -332,6 +332,14 @@ slides.value = [
     {
         targets: '.final-card-slide-details-button',
         opacity: 1,
+    },
+    {
+        targets: '.final-card-slide',
+        opacity: 0,
+    },
+    {
+        targets: '.journeys-end, .journeys-end-heading, .journeys-end-stars',
+        opacity: 1,
     }
 
 ] satisfies anime.AnimeAnimParams[]
@@ -412,10 +420,10 @@ slides.value = [
 
             <div
                 class="type-atoms absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-0 flex flex-col gap-8 justify-center items-center">
-                <div class="type-atoms-foxes flex flex-col gap-4">
-                    <Heading size="h1">The quick brown fox jumps over the lazy dog</Heading>
-                    <Heading size="h2">The quick brown fox jumps over the lazy dog</Heading>
-                    <Heading size="h3">The quick brown fox jumps over the lazy dog</Heading>
+                <div class="type-atoms-foxes flex flex-col gap-12">
+                    <Heading style="scale: 2" size="h1">The quick brown fox jumps over the lazy dog</Heading>
+                    <Heading style="scale: 2" size="h2">The quick brown fox jumps over the lazy dog</Heading>
+                    <Heading style="scale: 2" size="h3">The quick brown fox jumps over the lazy dog</Heading>
                 </div>
                 <h1
                     class="type-bg-heading absolute font-extrabold uppercase text-opacity-10 text-[500px] text-slate-700 opacity-0 outline-2 drop-shadow-[3.1px_1px_rgba(0,0,0,0.3)]">
@@ -448,7 +456,7 @@ slides.value = [
             <div class="component-headings absolute top-1/2 left-1/2 opacity-0 w-fit whitespace-nowrap flex gap-10 "
                  style="transform: translate(-50%, -50%);"
             >
-                <div style="display: flex; scale: 2">
+                <div style="display: flex; scale: 3">
                     <Heading class="component-heading-1 opacity-0 pl-4" size="h1">Singular</Heading>
                     <Heading class="component-heading-2 opacity-0 pl-4" size="h1">Simplicity</Heading>
                 </div>
@@ -522,6 +530,15 @@ slides.value = [
                         </div>
                     </template>
                 </Card>
+            </div>
+
+            <Stars class="journeys-end-stars opacity-0" />
+
+            <div class="journeys-end absolute top-1/2 left-1/2 opacity-0" style="transform: translate(-50%, -50%) scale(2);">
+
+                <Heading class="journeys-end-heading opacity-0" size="slide-intro">
+                   Journeys End
+                </Heading>
             </div>
         </div>
     </SlideArena>

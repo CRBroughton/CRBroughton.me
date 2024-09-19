@@ -8,6 +8,16 @@ import { ref, onMounted, onBeforeUnmount, type VNodeRef } from "vue";
 const sky = ref<VNodeRef | undefined>(undefined);
 const center = ref({ x: 0, y: 0 });
 
+
+interface Props {
+  opacity?: number
+}
+
+// For default values for your props, use :
+// withDefaults(defineProps<Props>(), { msg: 'myDefaultValue' })}
+const props = defineProps<Props>()
+const starOpacity = ref(props.opacity ?? 1)
+
 function getRandomColor() {
   const random = Math.random() * 100;
   if (random <= 60) {
@@ -244,7 +254,7 @@ body {
 @keyframes blur {
   0% {
     transform: translate(0, 0);
-    opacity: 1;
+    opacity: v-bind(starOpacity);
   }
   100% {
     opacity: 0;
