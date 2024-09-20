@@ -298,7 +298,7 @@ slides.value = [
             {opacity: 0},
 
         ],
-        duration: 2000,
+        duration: 4000,
     },
     {
         targets: '.final-card-slide-image',
