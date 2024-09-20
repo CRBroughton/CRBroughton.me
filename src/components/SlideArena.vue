@@ -126,12 +126,13 @@ onMounted(() => {
     })
 
 
-    document.addEventListener("keypress", async (event) => {
+    document.addEventListener("keydown", async (event) => {
         if (running.value !== true) {
-            if (event.key === "d") {
+            console.log(event)
+            if (event.key === "d" || event.key === 'ArrowRight') {
                 run(forward, 'forwards')
             }
-            if (event.key === 'a') {
+            if (event.key === 'a' || event.key === 'ArrowLeft') {
                 run(back, 'back')
             }
         }
