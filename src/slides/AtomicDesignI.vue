@@ -54,8 +54,6 @@ slides.value = [
     {
         targets: '.colour-atoms, .colour-bg-heading',
         opacity: 1,
-        initHide: true,
-        hide: true,
         duration: 600,
         easing: 'easeInOutCubic',
         slideHeading: "Introduction",
@@ -63,6 +61,7 @@ slides.value = [
     },
     {
         targets: '.bold-atoms',
+        duration: 600,
         opacity: 1,
     },
     {
@@ -118,8 +117,6 @@ slides.value = [
     {
         targets: '.spacing-atoms, .spacing-bg-heading',
         opacity: 1,
-        initHide: true,
-        hide: true,
         duration: 600,
     },
     {
@@ -293,6 +290,10 @@ slides.value = [
     {
         targets: '.final-card-slide-image-slot, .final-card-slide-title-slot, .final-card-slide-paragraph-slot, .final-card-slide-button-slot',
         keyframes: [
+            {opacity: 1},
+            {opacity: 0},
+            {opacity: 1},
+            {opacity: 0},
             {opacity: 1},
             {opacity: 0},
 
