@@ -108,12 +108,10 @@ slides.value = [
     {
         targets: '.type-atoms, .type-bg-heading',
         opacity: 1,
-        initHide: true,
-        hide: true,
         duration: 600,
     },
     {
-        targets: '.type-atoms, .type-bg-heading',
+        targets: '.type-atoms, .heading-atoms, .type-bg-heading',
         opacity: 0,
         duration: 600,
     },
@@ -340,6 +338,8 @@ slides.value = [
     {
         targets: '.journeys-end, .journeys-end-heading, .journeys-end-stars',
         opacity: 1,
+        hide: true,
+        initHide: true,
     }
 
 ] satisfies anime.AnimeAnimParams[]
@@ -367,7 +367,7 @@ slides.value = [
             <!-- Component Introduction -->
             <div
                 class="intro-component gap-4 flex flex-col absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-0">
-                <Card>
+                <Card style="scale: 1.2">
                     <template #image>
                         <Image src="https://www.giftpro.co.uk/wp-content/uploads/2021/06/Tillo-Header.jpg" />
                     </template>
@@ -414,22 +414,22 @@ slides.value = [
                     <Atom style="scale: 2" name="red-atom" :colour="bold_red" />
                 </div>
                 <h1
-                    class="colour-bg-heading absolute font-extrabold uppercase text-opacity-10 text-[500px] text-slate-700 opacity-0 outline-2 drop-shadow-[3.1px_1px_rgba(0,0,0,0.3)]">
+                    class="colour-bg-heading absolute font-extrabold uppercase text-opacity-10 text-[350px] text-slate-700 opacity-0 outline-2 drop-shadow-[3.1px_1px_rgba(0,0,0,0.3)]">
                     Colour</h1>
             </div>
 
-            <div
-                class="type-atoms absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-0 flex flex-col gap-8 justify-center items-center">
-                <div class="type-atoms-foxes flex flex-col gap-12">
-                    <Heading style="scale: 2" size="h1">The quick brown fox jumps over the lazy dog</Heading>
-                    <Heading style="scale: 2" size="h2">The quick brown fox jumps over the lazy dog</Heading>
-                    <Heading style="scale: 2" size="h3">The quick brown fox jumps over the lazy dog</Heading>
+            <divz
+                class="type-atoms absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-0 flex flex-col gap-8 justify-center items-center w-full">
+                <div class="heading-atoms flex flex-col gap-12">
+                    <Heading style="scale: 2" class="pb-4" size="atom-1">The quick brown fox jumps over the lazy dog</Heading>
+                    <Heading style="scale: 2" class="pb-4" size="atom-2">The quick brown fox jumps over the lazy dog</Heading>
+                    <Heading style="scale: 2" class="pb-4" size="atom-3">The quick brown fox jumps over the lazy dog</Heading>
                 </div>
                 <h1
-                    class="type-bg-heading absolute font-extrabold uppercase text-opacity-10 text-[500px] text-slate-700 opacity-0 outline-2 drop-shadow-[3.1px_1px_rgba(0,0,0,0.3)]">
+                    class="type-bg-heading absolute font-extrabold uppercase text-opacity-10 text-[450px] text-slate-700 opacity-0 outline-2 drop-shadow-[3.1px_1px_rgba(0,0,0,0.3)]">
                     Fonts</h1>
 
-            </div>
+            </divz>
 
             <div
                 class="spacing-atoms absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-0 flex flex-col gap-8 justify-center items-center">
@@ -441,7 +441,7 @@ slides.value = [
                     </div>
                 </div>
                 <h1
-                    class="spacing-bg-heading absolute font-extrabold uppercase text-opacity-10 text-[500px] text-slate-700 opacity-0 outline-2 drop-shadow-[3.1px_1px_rgba(0,0,0,0.3)]">
+                    class="spacing-bg-heading absolute font-extrabold uppercase text-opacity-10 text-[350px] text-slate-700 opacity-0 outline-2 drop-shadow-[3.1px_1px_rgba(0,0,0,0.3)]">
                     Spacing</h1>
             </div>
 
@@ -456,8 +456,8 @@ slides.value = [
             <div class="component-headings absolute top-1/2 left-1/2 opacity-0 w-fit whitespace-nowrap flex gap-10 "
                  style="transform: translate(-50%, -50%);"
             >
-                <div style="display: flex; scale: 3">
-                    <Heading class="component-heading-1 opacity-0 pl-4" size="h1">Singular</Heading>
+                <div style="display: flex; scale: 4">
+                    <Heading class="component-heading-1 opacity-0" size="h1">Singular</Heading>
                     <Heading class="component-heading-2 opacity-0 pl-4" size="h1">Simplicity</Heading>
                 </div>
             </div>
@@ -503,7 +503,7 @@ slides.value = [
 
             <div class="final-card-slide absolute top-1/2 left-1/2 opacity-0"
                 style="transform: translate(-50%, -50%);">
-                <Card class="h-[461px] w-[384px] relative">
+                <Card class="h-[461px] w-[384px] relative" style="scale: 1.2">
                     <template #image>
                         <div class="final-card-slide-image-slot opacity-0 absolute top-0 w-full h-[234px]" :class="[tillo_lapis]">
                         </div>
