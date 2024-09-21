@@ -34,10 +34,12 @@ slides.value = [
     {
         targets: '.intro-component',
         opacity: 1,
+        duration: 600,
     },
     {
         targets: '.intro-component',
         opacity: 0,
+        duration: 600,
     },
     {
         targets: '.intro-atomic-design-heading',
@@ -335,6 +337,7 @@ slides.value = [
     {
         targets: '.final-card-slide',
         opacity: 0,
+        duration: 600,
     },
     {
         targets: '.journeys-end, .journeys-end-heading, .journeys-end-stars',
