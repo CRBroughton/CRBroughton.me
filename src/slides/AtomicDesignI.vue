@@ -418,7 +418,7 @@ slides.value = [
                     <Atom style="scale: 2" name="red-atom" :colour="bold_red" />
                 </div>
                 <h1
-                    class="colour-bg-heading absolute font-extrabold uppercase text-opacity-10 text-[350px] text-slate-700 opacity-0 outline-2 drop-shadow-[3.1px_1px_rgba(0,0,0,0.3)]">
+                    class="colour-bg-heading absolute font-extrabold uppercase text-opacity-10 text-[350px] text-slate-500 opacity-0 outline-2 drop-shadow-[3.1px_1px_rgba(0,0,0,0.3)]">
                     Colour</h1>
             </div>
 
@@ -430,7 +430,7 @@ slides.value = [
                     <Heading style="scale: 2" class="pb-4" size="atom-3">The quick brown fox jumps over the lazy dog</Heading>
                 </div>
                 <h1
-                    class="type-bg-heading absolute font-extrabold uppercase text-opacity-10 text-[450px] text-slate-700 opacity-0 outline-2 drop-shadow-[3.1px_1px_rgba(0,0,0,0.3)]">
+                    class="type-bg-heading absolute font-extrabold uppercase text-opacity-10 text-[450px] text-slate-500 opacity-0 outline-2 drop-shadow-[3.1px_1px_rgba(0,0,0,0.3)]">
                     Fonts</h1>
 
             </divz>
@@ -445,7 +445,7 @@ slides.value = [
                     </div>
                 </div>
                 <h1
-                    class="spacing-bg-heading absolute font-extrabold uppercase text-opacity-10 text-[350px] text-slate-700 opacity-0 outline-2 drop-shadow-[3.1px_1px_rgba(0,0,0,0.3)]">
+                    class="spacing-bg-heading absolute font-extrabold uppercase text-opacity-10 text-[350px] text-slate-500 opacity-0 outline-2 drop-shadow-[3.1px_1px_rgba(0,0,0,0.3)]">
                     Spacing</h1>
             </div>
 
