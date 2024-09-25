@@ -50,7 +50,17 @@ slides.value = [
         duration: 800
     },
     {
-        targets: '.intro-atomic-design',
+        targets: '.intro-atomic-design-heading',
+        opacity: 0
+    },
+    {
+        targets: '.intro-atomic-design-heading-2',
+        opacity: 1,
+        width: '100%',
+        duration: 800
+    },
+    {
+        targets: '.intro-atomic-design, .token-example',
         opacity: 0,
     },
     {
@@ -394,8 +404,16 @@ slides.value = [
             <!-- The Atom/Tokens -->
             <div
                 class="intro-atomic-design absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-                <Heading class="intro-atomic-design-heading pb-4 w-[0px] overflow-clip" size="slide-intro" style="scale: 2">
+                <Heading class="intro-atomic-design-heading w-[0px] overflow-clip whitespace-nowrap" size="slide-intro" style="scale: 3">
                     Tokens
+                </Heading>
+
+            </div>
+
+            <div class="token-example absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+              
+                    <Heading class="intro-atomic-design-heading-2 w-[0px] overflow-clip whitespace-nowrap" size="h3" style="scale: 5" >
+                    $spacing_normal: 8px;
                 </Heading>
             </div>
 
