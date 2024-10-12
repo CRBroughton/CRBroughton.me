@@ -10,6 +10,7 @@ import Button from '../components/Button.vue'
 import Card from '../components/Card.vue'
 import Image from '../components/Image.vue'
 import CardParagraph from "../components/CardParagraph.vue";
+import ConferenceIcon from "../components/ConferenceIcon.vue";
 const { present_atom, primary, secondary, warning, slate_bg, slate_text, tillo_emerald, tillo_lapis, tillo_red, pastel_blue, pastel_red, pastel_green, bold_blue, bold_green, bold_red } = useColours()
 
 const slides = ref<anime.AnimeAnimParams[]>([])
@@ -360,7 +361,10 @@ slides.value = [
 </script>
 
 <template>
+        <ConferenceIcon class="absolute top-0 right-0 z-50 w-[50px] height-[50px]" />
+
     <SlideArena :slides :duration="120" @current-slide="console.log($event)">
+
         <div class="w-screen h-screen absolute overflow-hidden flex bg-black text-white">
 
             <!-- Stars -->
