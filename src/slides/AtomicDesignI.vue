@@ -55,13 +55,7 @@ slides.value = [
         opacity: 0
     },
     {
-        targets: '.intro-atomic-design-heading-2',
-        opacity: 1,
-        width: '100%',
-        duration: 800
-    },
-    {
-        targets: '.intro-atomic-design, .token-example',
+        targets: '.intro-atomic-design',
         opacity: 0,
     },
     {
@@ -138,7 +132,22 @@ slides.value = [
         opacity: 0,
         duration: 600,
     },
-
+    {
+        targets: '.intro-atomic-design-heading-2',
+        opacity: 1,
+        width: '100%',
+        duration: 800
+    },
+    {
+        targets: '.spacing-token-example',
+        opacity: 1,
+        duration: 600,
+    },
+    {
+        targets: '.spacing-token-example',
+        opacity: 0,
+        duration: 600,
+    },
     {
         targets: '.intro-atomic-design-2',
         opacity: 1,
@@ -274,14 +283,14 @@ slides.value = [
         targets: '.final-card-slide-image-slot, .final-card-slide-title-slot, .final-card-slide-paragraph-slot, .final-card-slide-button-slot',
         keyframes: [
             {opacity: 1},
-            {opacity: 0},
-            {opacity: 1},
-            {opacity: 0},
-            {opacity: 1},
-            {opacity: 0},
-
+            {opacity: 0.25},
         ],
         duration: 4000,
+    },
+    {
+        targets: '.final-card-slide-image-slot, .final-card-slide-title-slot, .final-card-slide-paragraph-slot, .final-card-slide-button-slot',
+        opacity: 0,
+        duration: 1000,
     },
     {
         targets: '.final-card-slide-image',
@@ -384,13 +393,6 @@ slides.value = [
 
             </div>
 
-            <div class="token-example absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-              
-                    <Heading class="intro-atomic-design-heading-2 w-[0px] overflow-clip whitespace-nowrap" size="h3" style="scale: 5" >
-                    $spacing_normal: 8px;
-                </Heading>
-            </div>
-
             <div
                 class="intro-atomic-design-2 absolute transform -translate-x-1/2 -translate-y-1/2 opacity-0 top-1/2 left-1/2" style="transform: translate(-50%, -50%); ">
                 <div class="atom-headings flex gap-2" style="scale: 2;">
@@ -440,6 +442,18 @@ slides.value = [
                     class="spacing-bg-heading absolute font-extrabold uppercase text-opacity-10 text-[350px] text-slate-500 opacity-0 outline-2 drop-shadow-[3.1px_1px_rgba(0,0,0,0.3)]">
                     Spacing</h1>
             </div>
+
+            <div class="spacing-token-example absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+              <div class="flex flex-col gap-[100px]">
+                <Heading class="intro-atomic-design-heading-2 w-[0px] overflow-clip           whitespace-nowrap text-[#5854E5]" size="h3" style="scale: 5">
+              $primary_default: #5854E5;
+                </Heading>
+                <Heading class="intro-atomic-design-heading-2 w-[0px] overflow-clip           whitespace-nowrap text-[#D03A3A]" size="h3" style="scale: 5">
+              $spacing_normal: 8px;
+                </Heading>
+              </div>
+            </div>
+
 
             <div class="components-introduction absolute top-1/2 left-1/2"
                 style="transform: translate(-50%, -50%);">
