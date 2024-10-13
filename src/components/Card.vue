@@ -1,4 +1,21 @@
 <script setup lang="ts">
+import { computed } from 'vue'
+
+const props = defineProps<{
+    removeStyles?: boolean
+}>()
+
+const titleStyles = computed(() => {
+    return props.removeStyles === true ? '' : 'px-6 mt-6'
+})
+
+const subtitleStyles = computed(() => {
+   return props.removeStyles === true ? '' : 'px-6 mt-2 mb-12'
+})
+
+const buttonStyles = computed(() => {
+    return props.removeStyles === true ? '' : 'mb-6'
+})
 
 </script>
 
@@ -7,13 +24,13 @@
         <div class="w-full object-cover">
             <slot name="image" />
         </div>
-        <div class="px-6 mt-6">
+        <div :class="titleStyles">
             <slot name="title" />
         </div>
-        <div class="px-6 mt-2 mb-12 text-gray-600">
+        <div class="text-gray-600" :class="subtitleStyles">
             <slot name="subtitle"/>
         </div>
-        <div class="mt-auto mb-6 flex rounded-b-xl">
+        <div class="mt-auto flex rounded-b-xl" :class="buttonStyles">
             <slot name="buttons" />
         </div>
     </div>

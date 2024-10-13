@@ -19,8 +19,8 @@ slides.value = [
         targets: '.cosmic-voyage-introduction',
         // scale: { value: 1, duration: 1000 },
         // opacity: { value: 1, delay: 2000, duration: 1000 },
-        // scale: { value: 2, duration: 8000 },
-        // opacity: { value: 1, delay: 2000, duration: 4000 },
+        scale: { value: 2, duration: 8000 },
+        opacity: { value: 1, delay: 2000, duration: 4000 },
         easing: 'easeInOutQuad',
     },
     {
@@ -97,35 +97,25 @@ slides.value = [
         duration: 600,
     },
     {
-        targets: '.spacing-atoms-atom',
-        keyframes: [
-            {
-                width: '160px',
-                height: '160px'
-            },
-            {
-                width: '170px',
-                height: '170px'
-            },
-            {
-                width: '200px',
-                height: '200px'
-            },
-            {
-                width: '220px',
-                height: '220px'   
-            },
-            {
-                width: '200px',
-                height: '200px'
-            },
-            {
-                width: '160px',
-                height: '160px'
-            }
-        ],
-        loop: true,
-        duration: 4000,
+        targets: '.type-atoms-foxes',
+        gap: '30px',
+    },
+    {
+        targets: '.button-container',
+        'padding-inline': '16px',
+        'gap': '16px',
+        'margin-bottom': '24px'
+    },
+    {
+        targets: '.card-subtitle',
+        'padding-inline': '24px',
+        'margin-top': '8px',
+        'margin-bottom': '48px'
+    },
+    {
+        targets: '.card-title',
+        'padding-inline': '24px',
+        'margin-top': '24px',
     },
     {
         targets: '.spacing-atoms, .spacing-bg-heading',
@@ -356,7 +346,7 @@ slides.value = [
                     A Cosmic Voyage
                 </Heading>
                 <Heading size="h1">
-                    Through Front-end Development
+                    Through Front End Development
                 </Heading>
             </div>
 
@@ -407,16 +397,16 @@ slides.value = [
             <div
                 class="colour-atoms absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-0 flex flex-col gap-8 justify-center items-center">
                 <h1
-                    class="colour-bg-heading -z-20 absolute font-extrabold uppercase text-opacity-20 text-[500px] text-slate-700 opacity-0 outline-2 drop-shadow-[3.1px_1px_rgba(0,0,0,0.3)]">
+                    class="colour-bg-heading -z-20 absolute font-extrabold uppercase text-opacity-20 text-[500px] text-slate-500 opacity-0 outline-2 drop-shadow-[3.1px_1px_rgba(0,0,0,0.3)]">
                     Colour</h1>
                 <div class="bold-atoms flex gap-4 opacity-0">
-                    <Atom name="blue-atom" :colour="tillo_lapis" />
-                    <Atom name="green-atom" :colour="tillo_emerald" />
-                    <Atom name="red-atom" :colour="tillo_red" />
+                    <Atom style="scale: 2" name="blue-atom" :colour="tillo_lapis" />
+                    <Atom style="scale: 2" name="green-atom" :colour="tillo_emerald" />
+                    <Atom style="scale: 2" name="red-atom" :colour="tillo_red" />
                 </div>
             </div>
 
-            <divz
+            <div
                 class="type-atoms absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-0 flex flex-col gap-8 justify-center items-center w-full">
                 <h1
                     class="type-bg-heading absolute font-extrabold uppercase text-opacity-20 text-[450px] text-slate-500 opacity-0 outline-2 drop-shadow-[3.1px_1px_rgba(0,0,0,0.3)]">
@@ -426,21 +416,53 @@ slides.value = [
                     <Heading style="scale: 2" class="pb-4" size="atom-2">The quick brown fox jumps over the lazy dog</Heading>
                     <Heading style="scale: 2" class="pb-4" size="atom-3">The quick brown fox jumps over the lazy dog</Heading>
                 </div>
-s            </divz>
+            </div>
 
             <div
-                class="spacing-atoms absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-0 flex flex-col gap-8 justify-center items-center">
+                class="spacing-atoms absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-0 flex flex-col gap-8 justify-center items-center w-full">
                 <h1
-                    class="spacing-bg-heading absolute font-extrabold uppercase text-opacity-20 text-[350px] text-slate-500 opacity-0 outline-2 drop-shadow-[3.1px_1px_rgba(0,0,0,0.3)]">
+                    class="-z-50 spacing-bg-heading absolute font-extrabold uppercase text-opacity-20 text-[350px] text-slate-500 opacity-0 outline-2 drop-shadow-[3.1px_1px_rgba(0,0,0,0.3)]">
                     Spacing</h1>
-                <div class="type-atoms-foxes flex justify-center items-center" style="scale: 2">
-                    <div class="spacing-atoms-atom flex justify-center items-center w-[160px] h-[160px] rounded-lg
-                        bg-stripes-white
-                        ">
-                        <div class="w-40 h-40 bg-slate-500 rounded-lg"></div>
-                    </div>
+                <div class="type-atoms-foxes bg-stripes-white flex justify-center items-center">
+                    <Card removeStyles class="spacing-atoms-atom">
+                    <template #image>
+                        <Image src="https://www.giftpro.co.uk/wp-content/uploads/2021/06/Tillo-Header.jpg" />
+                    </template>
+                    <template #title>
+                        <CardParagraph class="card-title" theme="dark">A Tillo gift card
+                        </CardParagraph>
+                    </template>
+                    <template #subtitle>
+                        <p class="card-subtitle">Surprise and delight your family or friends</p>
+                    </template>
+                    <template #buttons>
+                        <div class="button-container flex w-full">
+                            <Button size="small" class="w-full" theme="primary">Buy</Button>
+                            <Button size="small" class="w-full" theme="secondary">Details</Button>
+                        </div>
+                    </template>
+                </Card>
+
+                    
+                    <Card removeStyles class="spacing-atoms-atom">
+                    <template #image>
+                        <Image src="https://www.giftpro.co.uk/wp-content/uploads/2021/06/Tillo-Header.jpg" />
+                    </template>
+                    <template #title>
+                        <CardParagraph class="card-title" theme="dark">A Tillo gift card
+                        </CardParagraph>
+                    </template>
+                    <template #subtitle>
+                        <p class="card-subtitle">Surprise and delight your family or friends</p>
+                    </template>
+                    <template #buttons>
+                        <div class="button-container flex w-full">
+                            <Button size="small" class="w-full" theme="primary">Buy</Button>
+                            <Button size="small" class="w-full" theme="secondary">Details</Button>
+                        </div>
+                    </template>
+                </Card>
                 </div>
-             
             </div>
 
             <div class="spacing-token-example absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
