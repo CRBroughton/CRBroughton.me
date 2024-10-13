@@ -19,8 +19,8 @@ slides.value = [
         targets: '.cosmic-voyage-introduction',
         // scale: { value: 1, duration: 1000 },
         // opacity: { value: 1, delay: 2000, duration: 1000 },
-        scale: { value: 2, duration: 8000 },
-        opacity: { value: 1, delay: 2000, duration: 4000 },
+        // scale: { value: 2, duration: 8000 },
+        // opacity: { value: 1, delay: 2000, duration: 4000 },
         easing: 'easeInOutQuad',
     },
     {
@@ -406,41 +406,41 @@ slides.value = [
 
             <div
                 class="colour-atoms absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-0 flex flex-col gap-8 justify-center items-center">
+                <h1
+                    class="colour-bg-heading -z-20 absolute font-extrabold uppercase text-opacity-20 text-[500px] text-slate-700 opacity-0 outline-2 drop-shadow-[3.1px_1px_rgba(0,0,0,0.3)]">
+                    Colour</h1>
                 <div class="bold-atoms flex gap-4 opacity-0">
                     <Atom name="blue-atom" :colour="tillo_lapis" />
                     <Atom name="green-atom" :colour="tillo_emerald" />
                     <Atom name="red-atom" :colour="tillo_red" />
                 </div>
-                <h1
-                    class="colour-bg-heading absolute font-extrabold uppercase text-opacity-10 text-[500px] text-slate-700 opacity-0 outline-2 drop-shadow-[3.1px_1px_rgba(0,0,0,0.3)]">
-                    Colour</h1>
             </div>
 
             <divz
                 class="type-atoms absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-0 flex flex-col gap-8 justify-center items-center w-full">
+                <h1
+                    class="type-bg-heading absolute font-extrabold uppercase text-opacity-20 text-[450px] text-slate-500 opacity-0 outline-2 drop-shadow-[3.1px_1px_rgba(0,0,0,0.3)]">
+                    Fonts</h1>
                 <div class="heading-atoms flex flex-col gap-12">
                     <Heading style="scale: 2" class="pb-4" size="atom-1">The quick brown fox jumps over the lazy dog</Heading>
                     <Heading style="scale: 2" class="pb-4" size="atom-2">The quick brown fox jumps over the lazy dog</Heading>
                     <Heading style="scale: 2" class="pb-4" size="atom-3">The quick brown fox jumps over the lazy dog</Heading>
                 </div>
-                <h1
-                    class="type-bg-heading absolute font-extrabold uppercase text-opacity-10 text-[450px] text-slate-500 opacity-0 outline-2 drop-shadow-[3.1px_1px_rgba(0,0,0,0.3)]">
-                    Fonts</h1>
-
-            </divz>
+s            </divz>
 
             <div
                 class="spacing-atoms absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-0 flex flex-col gap-8 justify-center items-center">
-                <div class="type-atoms-foxes flex flex-col justify-center items-center gap-4" style="scale: 2">
+                <h1
+                    class="spacing-bg-heading absolute font-extrabold uppercase text-opacity-20 text-[350px] text-slate-500 opacity-0 outline-2 drop-shadow-[3.1px_1px_rgba(0,0,0,0.3)]">
+                    Spacing</h1>
+                <div class="type-atoms-foxes flex justify-center items-center" style="scale: 2">
                     <div class="spacing-atoms-atom flex justify-center items-center w-[160px] h-[160px] rounded-lg
                         bg-stripes-white
                         ">
                         <div class="w-40 h-40 bg-slate-500 rounded-lg"></div>
                     </div>
                 </div>
-                <h1
-                    class="spacing-bg-heading absolute font-extrabold uppercase text-opacity-10 text-[350px] text-slate-500 opacity-0 outline-2 drop-shadow-[3.1px_1px_rgba(0,0,0,0.3)]">
-                    Spacing</h1>
+             
             </div>
 
             <div class="spacing-token-example absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
