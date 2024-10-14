@@ -397,7 +397,7 @@ slides.value = [
             <div
                 class="colour-atoms absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-0 flex flex-col gap-8 justify-center items-center">
                 <h1
-                    class="colour-bg-heading -z-20 absolute font-extrabold uppercase text-opacity-20 text-[500px] text-slate-500 opacity-0 outline-2 drop-shadow-[3.1px_1px_rgba(0,0,0,0.3)]">
+                    class="colour-bg-heading -z-20 absolute font-extrabold uppercase text-opacity-50 text-[500px] text-slate-500 opacity-0 outline-2 drop-shadow-[3.1px_1px_rgba(0,0,0,0.3)]">
                     Colour</h1>
                 <div class="bold-atoms flex gap-4 opacity-0">
                     <Atom style="scale: 2" name="blue-atom" :colour="tillo_lapis" />
@@ -409,7 +409,7 @@ slides.value = [
             <div
                 class="type-atoms absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-0 flex flex-col gap-8 justify-center items-center w-full">
                 <h1
-                    class="type-bg-heading absolute font-extrabold uppercase text-opacity-20 text-[450px] text-slate-500 opacity-0 outline-2 drop-shadow-[3.1px_1px_rgba(0,0,0,0.3)]">
+                    class="type-bg-heading absolute font-extrabold uppercase text-opacity-50 text-[450px] text-slate-500 opacity-0 outline-2 drop-shadow-[3.1px_1px_rgba(0,0,0,0.3)]">
                     Fonts</h1>
                 <div class="heading-atoms flex flex-col gap-12">
                     <Heading style="scale: 2" class="pb-4" size="atom-1">The quick brown fox jumps over the lazy dog</Heading>
@@ -421,7 +421,7 @@ slides.value = [
             <div
                 class="spacing-atoms absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-0 flex flex-col gap-8 justify-center items-center w-full">
                 <h1
-                    class="-z-50 spacing-bg-heading absolute font-extrabold uppercase text-opacity-20 text-[350px] text-slate-500 opacity-0 outline-2 drop-shadow-[3.1px_1px_rgba(0,0,0,0.3)]">
+                    class="-z-50 spacing-bg-heading absolute font-extrabold uppercase text-opacity-50 text-[350px] text-slate-500 opacity-0 outline-2 drop-shadow-[3.1px_1px_rgba(0,0,0,0.3)]">
                     Spacing</h1>
                 <div class="type-atoms-foxes bg-stripes-white flex justify-center items-center">
                     <Card removeStyles class="spacing-atoms-atom">
