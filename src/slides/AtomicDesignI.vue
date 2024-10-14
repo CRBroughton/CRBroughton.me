@@ -330,7 +330,7 @@ slides.value = [
 </script>
 
 <template>
-        <ConferenceIcon class="absolute top-0 right-0 z-50 w-[50px] height-[50px]" />
+        <ConferenceIcon class="absolute top-0 right-0 z-50 w-[80px] height-[80px]" />
 
     <SlideArena :slides :duration="120" @current-slide="console.log($event)">
 

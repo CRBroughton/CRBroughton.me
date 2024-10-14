@@ -128,7 +128,6 @@ onMounted(() => {
 
     document.addEventListener("keydown", async (event) => {
         if (running.value !== true) {
-            console.log(event)
             if (event.key === "d" || event.key === 'ArrowRight') {
                 run(forward, 'forwards')
             }
@@ -137,6 +136,16 @@ onMounted(() => {
             }
         }
     })
+
+    document.addEventListener("click", async (event) => {
+        event.preventDefault()
+        run(forward, 'forwards')
+    })
+    document.addEventListener("contextmenu", async (event) => {
+        event.preventDefault()
+        run(back, 'back')
+    })
+
 })
 
 const buttonClasses = computed(() => {
