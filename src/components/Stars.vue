@@ -31,11 +31,11 @@ function getRandomColor() {
 
 function getRandomSize(size: number) {
   if (size <= 60) {
-    return 4; // 60% chance for yellow
+    return 8; // 60% chance for yellow
   } else if (size <= 90) {
-    return 2 // 30% chance for white
+    return 4 // 30% chance for white
   } else {
-    return 1 // 10% chance for red
+    return 2 // 10% chance for red
   }
 }
 
