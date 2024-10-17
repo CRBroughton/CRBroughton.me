@@ -182,7 +182,6 @@ const showText = ref(false)
     </div>
     <div class="w-full flex items-center fixed bottom-0 right-0 p-4">
         <div class="relative mr-auto">
-            <h4 class="font-bold text-slate-600">Navigate with A & D</h4>
         </div>
         <button :class="buttonClasses" :disabled="running">
             <component :is="showText === true ? Projector : Text" class="w-10 h-10 text-slate-300"
