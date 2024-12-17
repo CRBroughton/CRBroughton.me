@@ -11,7 +11,9 @@ const simulationParams = reactive({
   FRICTION_HALF_LIFE: 0.010,
   R_MAX: 0.1,
   MAX_FORCE: 10.0,
-  MIN_DISTANCE: 0.001
+  MIN_DISTANCE: 0.001,
+  HIDE_UI: false,
+  IS_3D: false,
 })
 
 function clamp(value: number, min: number, max: number): number {
@@ -42,8 +44,10 @@ watch([() => simulationParams.FRICTION_HALF_LIFE, () => simulationParams.DT], ()
 let colours = new Int32Array(simulationParams.NUMBER)
 let positionsX = new Float32Array(simulationParams.NUMBER)
 let positionsY = new Float32Array(simulationParams.NUMBER)
+let positionsZ = new Float32Array(simulationParams.NUMBER)
 let velocitiesX = new Float32Array(simulationParams.NUMBER)
 let velocitiesY = new Float32Array(simulationParams.NUMBER)
+let velocitiesZ = new Float32Array(simulationParams.NUMBER)
 
 // Pre-calculate colors
 let colorCache: string[] = []
@@ -63,8 +67,10 @@ function resetSimulation() {
   colours = new Int32Array(num)
   positionsX = new Float32Array(num)
   positionsY = new Float32Array(num)
+  positionsZ = new Float32Array(num) 
   velocitiesX = new Float32Array(num)
   velocitiesY = new Float32Array(num)
+  velocitiesZ = new Float32Array(num) 
   matrix = makeRandomMatrix()
   updateColorCache()
 
@@ -72,8 +78,10 @@ function resetSimulation() {
     colours[i] = Math.floor(Math.random() * types)
     positionsX[i] = Math.random()
     positionsY[i] = Math.random()
+    positionsZ[i] = Math.random()
     velocitiesX[i] = 0
     velocitiesY[i] = 0
+    velocitiesZ[i] = 0 
   }
 }
 
@@ -98,23 +106,30 @@ function update() {
   const rMax = simulationParams.R_MAX
   const minDist = simulationParams.MIN_DISTANCE
   const num = simulationParams.NUMBER
+  const is3D = simulationParams.IS_3D
 
   for (let i = 0; i < num; i++) {
     let totalForceX = 0
     let totalForceY = 0
+    let totalForceZ = 0 
 
     for (let j = 0; j < num; j++) {
       if (j === i) continue
 
       let rx = positionsX[j] - positionsX[i]
       let ry = positionsY[j] - positionsY[i]
+      let rz = is3D ? positionsZ[j] - positionsZ[i] : 0
 
       if (rx > 0.5) rx -= 1.0
       else if (rx < -0.5) rx += 1.0
       if (ry > 0.5) ry -= 1.0
       else if (ry < -0.5) ry += 1.0
+      if (is3D) {  // Wrap Z if 3D
+        if (rz > 0.5) rz -= 1.0
+        else if (rz < -0.5) rz += 1.0
+      }
 
-      const r = Math.hypot(rx, ry)
+      const r = Math.hypot(rx, ry, rz)
 
       if (r > minDist && r < rMax) {
         let f = force(r / rMax, matrix[colours[i]][colours[j]])
@@ -122,27 +137,41 @@ function update() {
 
         const rxf = rx / r * f
         const ryf = ry / r * f
+        const rzf = is3D ? rz / r * f : 0
+
         totalForceX += rxf
         totalForceY += ryf
+        totalForceZ += rzf
       }
     }
 
     totalForceX = clamp(totalForceX * rMax, -maxForce, maxForce)
     totalForceY = clamp(totalForceY * rMax, -maxForce, maxForce)
+    totalForceZ = is3D ? clamp(totalForceZ * rMax, -maxForce, maxForce) : 0
 
     const newVelX = velocitiesX[i] * frictionFactor + totalForceX * dt
     const newVelY = velocitiesY[i] * frictionFactor + totalForceY * dt
+    const newVelZ = is3D ? velocitiesZ[i] * frictionFactor + totalForceZ * dt : 0
 
     velocitiesX[i] = velocitiesX[i] * 0.7 + newVelX * 0.3
     velocitiesY[i] = velocitiesY[i] * 0.7 + newVelY * 0.3
+    if (is3D) {
+      velocitiesZ[i] = velocitiesZ[i] * 0.7 + newVelZ * 0.3
+    }
   }
 
   for (let i = 0; i < num; i++) {
     positionsX[i] += velocitiesX[i] * dt
     positionsY[i] += velocitiesY[i] * dt
+    if (is3D) {
+      positionsZ[i] += velocitiesZ[i] * dt
+    }
 
     positionsX[i] = positionsX[i] - Math.floor(positionsX[i])
     positionsY[i] = positionsY[i] - Math.floor(positionsY[i])
+    if (is3D) {
+      positionsZ[i] = positionsZ[i] - Math.floor(positionsZ[i])
+    }
   }
 }
 
@@ -170,6 +199,13 @@ function loop() {
   const num = simulationParams.NUMBER
   const width = canvas.value.width
   const height = canvas.value.height
+  const is3D = simulationParams.IS_3D
+
+  // Sort particles by Z depth if 3D
+  const drawOrder = Array.from({ length: num }, (_, i) => i)
+  if (is3D) {
+    drawOrder.sort((a, b) => positionsZ[b] - positionsZ[a])
+  }
 
   for (let colorType = 0; colorType < types; colorType++) {
     context.beginPath()
@@ -179,8 +215,10 @@ function loop() {
       if (colours[i] === colorType) {
         const screenX = positionsX[i] * width
         const screenY = positionsY[i] * height
+        // Scale based on Z depth
+        const scale = is3D ? 0.5 + positionsZ[i] : 1
         context.moveTo(screenX, screenY)
-        context.arc(screenX, screenY, 3.0, 0, 2 * Math.PI)
+        context.arc(screenX, screenY, 3.0 * scale, 0, 2 * Math.PI)
       }
     }
     context.fill()
@@ -188,7 +226,6 @@ function loop() {
 
   requestAnimationFrame(loop)
 }
-
 onMounted(() => {
   if (canvas.value) {
     context = canvas.value.getContext('2d', { 
@@ -213,7 +250,17 @@ onUnmounted(() => {
 
 <template>
   <canvas ref="canvas" id="particle-canvas"></canvas>
-  <div class="controls">
+  <div style="position: absolute; bottom: 10px; right: 10px; display: flex; gap: 1em;">
+    <label style="font-size: 18px;">Hide UI</label>
+      <input 
+        type="checkbox" 
+        v-model.number="simulationParams.HIDE_UI" 
+        min="100" 
+        max="5000" 
+        step="100"
+      >
+  </div>
+  <div v-if="simulationParams.HIDE_UI === false" class="controls">
     <div class="control-group">
       <label>Particles: {{ simulationParams.NUMBER }}</label>
       <input 
@@ -281,6 +328,15 @@ onUnmounted(() => {
         @input="resetSimulation"
       >
     </div>
+
+    <div class="toggle-group">
+      <label>3D Mode</label>
+      <input 
+        type="checkbox" 
+        v-model="simulationParams.IS_3D"
+        @change="resetSimulation"
+      >
+    </div>
   </div>
 </template>
 
@@ -320,6 +376,28 @@ canvas {
 .control-group input {
   width: 100%;
   margin-top: 5px;
+}
+
+.toggle-controls {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  gap: 1em;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 10px;
+  border-radius: 5px;
+  color: white;
+}
+
+.toggle-group {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}
+
+.toggle-group label {
+  font-size: 18px;
 }
 
 :global(body) {
