@@ -1,29 +1,24 @@
 {
   "name": "crbroughton-me",
   "type": "module",
-  "version": "0.0.1",
+  "private": true,
   "scripts": {
-    "dev": "astro dev",
-    "start": "astro dev",
-    "build": "astro check && astro build",
-    "preview": "astro preview",
-    "astro": "astro"
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview"
   },
   "dependencies": {
-    "@astrojs/check": "^0.4.1",
-    "@astrojs/tailwind": "^5.1.0",
-    "@astrojs/vue": "^4.0.8",
-    "@fontsource-variable/manrope": "^5.0.18",
-    "@types/animejs": "^3.1.12",
-    "@vueuse/core": "^10.11.0",
-    "animejs": "^3.2.2",
-    "astro": "^4.2.4",
-    "lucide-vue-next": "^0.397.0",
-    "tailwindcss": "^3.4.1",
-    "typescript": "^5.3.3",
-    "vue": "^3.4.15"
+    "@nuxt/content": "catalog:",
+    "@unocss/nuxt": "catalog:",
+    "@unocss/preset-wind3": "catalog:",
+    "better-sqlite3": "catalog:",
+    "nuxt": "catalog:",
+    "unocss": "catalog:"
   },
   "devDependencies": {
-    "sass": "^1.77.6"
+    "@antfu/eslint-config": "catalog:",
+    "@unocss/eslint-plugin": "catalog:",
+    "eslint": "catalog:"
   }
 }
