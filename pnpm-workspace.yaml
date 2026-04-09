@@ -7,7 +7,7 @@ packages:
 
 allowBuilds:
   '@parcel/watcher': false
-  better-sqlite3: 12.6.0
+  better-sqlite3: true
   esbuild: false
 
 overrides:
