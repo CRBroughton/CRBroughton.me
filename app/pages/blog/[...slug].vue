@@ -1,8 +1,9 @@
 <script setup lang="ts">
 const route = useRoute()
+const path = computed(() => route.path.replace(/\/$/, '') || '/')
 
-const { data: post } = await useAsyncData(`blog-${route.path}`, () =>
-  queryCollection('blog').path(route.path).first())
+const { data: post } = await useAsyncData(`blog-${path.value}`, () =>
+  queryCollection('blog').path(path.value).first())
 
 if (!post.value) {
   throw createError({ statusCode: 404, statusMessage: 'Post not found', fatal: true })
