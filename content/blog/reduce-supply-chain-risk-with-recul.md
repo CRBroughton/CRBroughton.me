@@ -1,7 +1,7 @@
 ---
 title: Reduce Supply Chain Risk With Recul
-date: "2026-05-06"
-published: false
+date: "2026-05-07"
+published: true
 tags: [Security, Dependencies, Supply Chain]
 ---
 
